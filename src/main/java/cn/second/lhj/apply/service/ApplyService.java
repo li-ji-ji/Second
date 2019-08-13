@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import cn.second.lhj.apply.po.Apply;
 
 /*
- *    积分申请表
+    *          积分申请表
  * */
 
 @Service

@@ -1,4 +1,4 @@
-package cn.second.lhj.apply.util;
+package cn.second.lhj.util;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
@@ -24,11 +24,15 @@ public class GeneratorSqlMap {
 
 	}
 
+	
+	
 	/*
 	 * public static void main(String[] args) throws Exception { try{
 	 * GeneratorSqlMap generatorSqlMap=new GeneratorSqlMap();
-	 * generatorSqlMap.generator(); }catch(Exception e){ e.printStackTrace(); } }
-	 * 
+	 * generatorSqlMap.generator();System.out.println("生成完毕"); }catch(Exception e){
+	 * e.printStackTrace(); } }
 	 */
+	  
+	 
 	 
 }

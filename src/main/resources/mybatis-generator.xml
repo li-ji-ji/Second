@@ -17,7 +17,7 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		
-		<javaModelGenerator targetPackage="cn.second.lhj.apply.po"
+		<javaModelGenerator targetPackage="cn.second.lhj.applykind.po"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -29,10 +29,11 @@
 		</sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.second.lhj.apply.mapper" targetProject=".\src\main\java">
+			targetPackage="cn.second.lhj.applykind.mapper" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<table tableName="apply"></table>
+		<!-- <table tableName="apply"></table> -->
+		<table tableName="apply_kind"></table>
 		
 	</context>
 </generatorConfiguration>
