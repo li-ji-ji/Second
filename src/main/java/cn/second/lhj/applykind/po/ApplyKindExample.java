@@ -294,6 +294,76 @@ public class ApplyKindExample {
             return (Criteria) this;
         }
 
+        public Criteria andPNameIsNull() {
+            addCriterion("p_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameIsNotNull() {
+            addCriterion("p_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameEqualTo(String value) {
+            addCriterion("p_name =", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameNotEqualTo(String value) {
+            addCriterion("p_name <>", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameGreaterThan(String value) {
+            addCriterion("p_name >", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameGreaterThanOrEqualTo(String value) {
+            addCriterion("p_name >=", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameLessThan(String value) {
+            addCriterion("p_name <", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameLessThanOrEqualTo(String value) {
+            addCriterion("p_name <=", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameLike(String value) {
+            addCriterion("p_name like", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameNotLike(String value) {
+            addCriterion("p_name not like", value, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameIn(List<String> values) {
+            addCriterion("p_name in", values, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameNotIn(List<String> values) {
+            addCriterion("p_name not in", values, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameBetween(String value1, String value2) {
+            addCriterion("p_name between", value1, value2, "pName");
+            return (Criteria) this;
+        }
+
+        public Criteria andPNameNotBetween(String value1, String value2) {
+            addCriterion("p_name not between", value1, value2, "pName");
+            return (Criteria) this;
+        }
+
         public Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;

@@ -15,10 +15,14 @@ public interface ApplyKindService {
 	
 	
 	/*-----------------------------------------查询---------------------------------------------*/
+	//查询所有分类条数
+	public int countApplyKindAll() throws Exception;
 	//查询所有分类
 	public List<ApplyKind> getApplyKindAll()throws Exception;
 	//查询所有分类（分页）
 	public List<ApplyKind> getApplyKindAllLimit(Integer page,Integer count)throws Exception;
+	//查询一二级分类
+	public List<ApplyKind> getApplyKindFirstAndSecond()throws Exception;
 	//根据ID查询分类
 	public ApplyKind getApplyKindById(Integer id)throws Exception;
 	//根据分类名称查询分类

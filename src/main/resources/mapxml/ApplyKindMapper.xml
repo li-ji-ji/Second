@@ -5,6 +5,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="kind_name" property="kindName" jdbcType="VARCHAR" />
     <result column="p_id" property="pId" jdbcType="INTEGER" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="kind_integral" property="kindIntegral" jdbcType="DOUBLE" />
     <result column="kind_intro" property="kindIntro" jdbcType="VARCHAR" />
@@ -72,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, kind_name, p_id, status, kind_integral, kind_intro, need_supp_doc, need_supp_file, 
+    id, kind_name, p_id, p_name, status, kind_integral, kind_intro, need_supp_doc, need_supp_file, 
     need_check, check_kind
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.second.lhj.applykind.po.ApplyKindExample" >
@@ -107,13 +108,13 @@
   </delete>
   <insert id="insert" parameterType="cn.second.lhj.applykind.po.ApplyKind" >
     insert into apply_kind (id, kind_name, p_id, 
-      status, kind_integral, kind_intro, 
-      need_supp_doc, need_supp_file, need_check, 
-      check_kind)
+      p_name, status, kind_integral, 
+      kind_intro, need_supp_doc, need_supp_file, 
+      need_check, check_kind)
     values (#{id,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}, #{pId,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{kindIntegral,jdbcType=DOUBLE}, #{kindIntro,jdbcType=VARCHAR}, 
-      #{needSuppDoc,jdbcType=INTEGER}, #{needSuppFile,jdbcType=INTEGER}, #{needCheck,jdbcType=INTEGER}, 
-      #{checkKind,jdbcType=INTEGER})
+      #{pName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{kindIntegral,jdbcType=DOUBLE}, 
+      #{kindIntro,jdbcType=VARCHAR}, #{needSuppDoc,jdbcType=INTEGER}, #{needSuppFile,jdbcType=INTEGER}, 
+      #{needCheck,jdbcType=INTEGER}, #{checkKind,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.second.lhj.applykind.po.ApplyKind" >
     insert into apply_kind
@@ -126,6 +127,9 @@
       </if>
       <if test="pId != null" >
         p_id,
+      </if>
+      <if test="pName != null" >
+        p_name,
       </if>
       <if test="status != null" >
         status,
@@ -158,6 +162,9 @@
       </if>
       <if test="pId != null" >
         #{pId,jdbcType=INTEGER},
+      </if>
+      <if test="pName != null" >
+        #{pName,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
@@ -200,6 +207,9 @@
       <if test="record.pId != null" >
         p_id = #{record.pId,jdbcType=INTEGER},
       </if>
+      <if test="record.pName != null" >
+        p_name = #{record.pName,jdbcType=VARCHAR},
+      </if>
       <if test="record.status != null" >
         status = #{record.status,jdbcType=INTEGER},
       </if>
@@ -231,6 +241,7 @@
     set id = #{record.id,jdbcType=INTEGER},
       kind_name = #{record.kindName,jdbcType=VARCHAR},
       p_id = #{record.pId,jdbcType=INTEGER},
+      p_name = #{record.pName,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       kind_integral = #{record.kindIntegral,jdbcType=DOUBLE},
       kind_intro = #{record.kindIntro,jdbcType=VARCHAR},
@@ -250,6 +261,9 @@
       </if>
       <if test="pId != null" >
         p_id = #{pId,jdbcType=INTEGER},
+      </if>
+      <if test="pName != null" >
+        p_name = #{pName,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
@@ -279,6 +293,7 @@
     update apply_kind
     set kind_name = #{kindName,jdbcType=VARCHAR},
       p_id = #{pId,jdbcType=INTEGER},
+      p_name = #{pName,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       kind_integral = #{kindIntegral,jdbcType=DOUBLE},
       kind_intro = #{kindIntro,jdbcType=VARCHAR},

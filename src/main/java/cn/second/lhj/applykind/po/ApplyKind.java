@@ -7,6 +7,8 @@ public class ApplyKind {
 
     private Integer pId;
 
+    private String pName;
+
     private Integer status;
 
     private Double kindIntegral;
@@ -43,6 +45,14 @@ public class ApplyKind {
 
     public void setpId(Integer pId) {
         this.pId = pId;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName == null ? null : pName.trim();
     }
 
     public Integer getStatus() {

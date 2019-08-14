@@ -1,5 +1,6 @@
 package cn.second.lhj.applykind.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,12 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 
 	/*-----------------------------------------查询---------------------------------------------*/
 	@Override
+	public int countApplyKindAll() throws Exception {
+		// TODO 查询所有分类条数
+		return kindMapper.countByExample(null);
+	}
+	
+	@Override
 	public List<ApplyKind> getApplyKindAll() throws Exception {
 		// TODO 查询所有分类
 		return kindMapper.selectByExample(null);
@@ -31,7 +38,19 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 		PageHelper.startPage(page,count);
 		return kindMapper.selectByExample(null);
 	}
-
+	
+	@Override
+	public List<ApplyKind> getApplyKindFirstAndSecond()throws Exception{
+		// TODO 查询一二级分类
+		List<ApplyKind> kindLevelOne=getApplyKindByPid(0);
+		List<ApplyKind> kindList=new ArrayList();
+		kindList.addAll(kindLevelOne);
+		for(ApplyKind kind:kindLevelOne) {
+			kindList.addAll(getApplyKindByPid(kind.getId()));
+		}
+		return kindList;
+	}
+	
 	@Override
 	public ApplyKind getApplyKindById(Integer id) throws Exception {
 		// TODO 根据ID查询分类

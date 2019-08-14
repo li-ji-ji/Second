@@ -29,6 +29,13 @@ public class ApplyKindAPI {
 
 	/*-----------------------------------------查询---------------------------------------------*/
 
+    @ApiOperation(value="查询所有分类条数")
+    @RequestMapping("/countApplyKindAll")
+	public int countApplyKindAll() throws Exception {
+		// TODO 查询所有分类
+		return kindService.countApplyKindAll();
+	}
+    
     @ApiOperation(value="查询所有分类")
     @RequestMapping("/getApplyKindAll")
 	public List<ApplyKind> getApplyKindAll() throws Exception {
@@ -44,6 +51,13 @@ public class ApplyKindAPI {
 		return kindService.getApplyKindAllLimit(page, count);
 	}
 
+    @ApiOperation(value="查询一二级分类")
+    @RequestMapping("/getApplyKindFirstAndSecond")
+	public List<ApplyKind> getApplyKindFirstAndSecond()throws Exception{
+		// TODO 查询一二级分类
+    	return kindService.getApplyKindFirstAndSecond();
+    }
+    
     @ApiOperation(value="根据ID查询分类")
     @RequestMapping("/getApplyKindById")
 	public ApplyKind getApplyKindById(@RequestParam("id") Integer id) throws Exception {
