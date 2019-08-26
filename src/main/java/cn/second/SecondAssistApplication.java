@@ -10,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @MapperScan(basePackages = {"cn.second.lhj.assist.mapper"})
 @EnableDiscoveryClient //启用服务注册与发现
 @EnableFeignClients //启用feign进行远程调用
+//测试提交
 public class SecondAssistApplication {
 
 	public static void main(String[] args) {
