@@ -29,6 +29,14 @@ public interface ApplyKindService {
 	public List<ApplyKind> getApplyKindByName(String name)throws Exception;
 	//根据分类名称查询分类（模糊）
 	public List<ApplyKind> getApplyKindByNameLike(String keyWord)throws Exception;
+	//根据是否有子分类查询分类
+	public List<ApplyKind> getApplyKindByHasChild(Integer hasChild)throws Exception;
+	//根据是否有子分类查询分类（分页）
+	public List<ApplyKind> getApplyKindByHasChildLimit(Integer hasChild,Integer page,Integer count)throws Exception;
+	//根据是否需要举办活动查询分类
+	public List<ApplyKind> getApplyKindByHasAct(Integer hasAct)throws Exception;
+	//根据是否需要举办活动查询分类（分页）
+	public List<ApplyKind> getApplyKindByHasActLimit(Integer hasAct,Integer page,Integer count)throws Exception;
 	//根据上级分类ID查询分类
 	public List<ApplyKind> getApplyKindByPid(Integer pId)throws Exception;
 	//根据上级分类ID查询分类（分页）
@@ -81,6 +89,12 @@ public interface ApplyKindService {
 	public int setApplyKindStatusOn(Integer id) throws Exception;
 	//禁用分类
 	public int setApplyKindStatusOff(Integer id) throws Exception;
+	//判断是否有子分类并修改
+	public int setApplyKindHasChildByHasChild(Integer id) throws Exception;
+	//修改为拥有子分类
+	public int setApplyKindHasChild(Integer id) throws Exception;
+	//修改为未拥有子分类
+	public int setApplyKindHasNotChild(Integer id) throws Exception;
 	//启用佐证材料
 	public int setApplyKindDocOn(Integer id) throws Exception;
 	//禁用佐证材料

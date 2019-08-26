@@ -364,6 +364,126 @@ public class ApplyKindExample {
             return (Criteria) this;
         }
 
+        public Criteria andHasChildIsNull() {
+            addCriterion("has_child is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildIsNotNull() {
+            addCriterion("has_child is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildEqualTo(Integer value) {
+            addCriterion("has_child =", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildNotEqualTo(Integer value) {
+            addCriterion("has_child <>", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildGreaterThan(Integer value) {
+            addCriterion("has_child >", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildGreaterThanOrEqualTo(Integer value) {
+            addCriterion("has_child >=", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildLessThan(Integer value) {
+            addCriterion("has_child <", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildLessThanOrEqualTo(Integer value) {
+            addCriterion("has_child <=", value, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildIn(List<Integer> values) {
+            addCriterion("has_child in", values, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildNotIn(List<Integer> values) {
+            addCriterion("has_child not in", values, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildBetween(Integer value1, Integer value2) {
+            addCriterion("has_child between", value1, value2, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasChildNotBetween(Integer value1, Integer value2) {
+            addCriterion("has_child not between", value1, value2, "hasChild");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActIsNull() {
+            addCriterion("has_act is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActIsNotNull() {
+            addCriterion("has_act is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActEqualTo(Integer value) {
+            addCriterion("has_act =", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActNotEqualTo(Integer value) {
+            addCriterion("has_act <>", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActGreaterThan(Integer value) {
+            addCriterion("has_act >", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActGreaterThanOrEqualTo(Integer value) {
+            addCriterion("has_act >=", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActLessThan(Integer value) {
+            addCriterion("has_act <", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActLessThanOrEqualTo(Integer value) {
+            addCriterion("has_act <=", value, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActIn(List<Integer> values) {
+            addCriterion("has_act in", values, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActNotIn(List<Integer> values) {
+            addCriterion("has_act not in", values, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActBetween(Integer value1, Integer value2) {
+            addCriterion("has_act between", value1, value2, "hasAct");
+            return (Criteria) this;
+        }
+
+        public Criteria andHasActNotBetween(Integer value1, Integer value2) {
+            addCriterion("has_act not between", value1, value2, "hasAct");
+            return (Criteria) this;
+        }
+
         public Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;
@@ -671,66 +791,6 @@ public class ApplyKindExample {
 
         public Criteria andNeedSuppFileNotBetween(Integer value1, Integer value2) {
             addCriterion("need_supp_file not between", value1, value2, "needSuppFile");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckIsNull() {
-            addCriterion("need_check is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckIsNotNull() {
-            addCriterion("need_check is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckEqualTo(Integer value) {
-            addCriterion("need_check =", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckNotEqualTo(Integer value) {
-            addCriterion("need_check <>", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckGreaterThan(Integer value) {
-            addCriterion("need_check >", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckGreaterThanOrEqualTo(Integer value) {
-            addCriterion("need_check >=", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckLessThan(Integer value) {
-            addCriterion("need_check <", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckLessThanOrEqualTo(Integer value) {
-            addCriterion("need_check <=", value, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckIn(List<Integer> values) {
-            addCriterion("need_check in", values, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckNotIn(List<Integer> values) {
-            addCriterion("need_check not in", values, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckBetween(Integer value1, Integer value2) {
-            addCriterion("need_check between", value1, value2, "needCheck");
-            return (Criteria) this;
-        }
-
-        public Criteria andNeedCheckNotBetween(Integer value1, Integer value2) {
-            addCriterion("need_check not between", value1, value2, "needCheck");
             return (Criteria) this;
         }
 

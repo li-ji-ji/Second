@@ -225,6 +225,76 @@ public class ApplyExample {
             return (Criteria) this;
         }
 
+        public Criteria andKindNameIsNull() {
+            addCriterion("kind_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameIsNotNull() {
+            addCriterion("kind_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameEqualTo(String value) {
+            addCriterion("kind_name =", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameNotEqualTo(String value) {
+            addCriterion("kind_name <>", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameGreaterThan(String value) {
+            addCriterion("kind_name >", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameGreaterThanOrEqualTo(String value) {
+            addCriterion("kind_name >=", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameLessThan(String value) {
+            addCriterion("kind_name <", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameLessThanOrEqualTo(String value) {
+            addCriterion("kind_name <=", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameLike(String value) {
+            addCriterion("kind_name like", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameNotLike(String value) {
+            addCriterion("kind_name not like", value, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameIn(List<String> values) {
+            addCriterion("kind_name in", values, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameNotIn(List<String> values) {
+            addCriterion("kind_name not in", values, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameBetween(String value1, String value2) {
+            addCriterion("kind_name between", value1, value2, "kindName");
+            return (Criteria) this;
+        }
+
+        public Criteria andKindNameNotBetween(String value1, String value2) {
+            addCriterion("kind_name not between", value1, value2, "kindName");
+            return (Criteria) this;
+        }
+
         public Criteria andStuIdIsNull() {
             addCriterion("stu_id is null");
             return (Criteria) this;

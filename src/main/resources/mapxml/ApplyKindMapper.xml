@@ -6,12 +6,13 @@
     <result column="kind_name" property="kindName" jdbcType="VARCHAR" />
     <result column="p_id" property="pId" jdbcType="INTEGER" />
     <result column="p_name" property="pName" jdbcType="VARCHAR" />
+    <result column="has_child" property="hasChild" jdbcType="INTEGER" />
+    <result column="has_act" property="hasAct" jdbcType="INTEGER" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="kind_integral" property="kindIntegral" jdbcType="DOUBLE" />
     <result column="kind_intro" property="kindIntro" jdbcType="VARCHAR" />
     <result column="need_supp_doc" property="needSuppDoc" jdbcType="INTEGER" />
     <result column="need_supp_file" property="needSuppFile" jdbcType="INTEGER" />
-    <result column="need_check" property="needCheck" jdbcType="INTEGER" />
     <result column="check_kind" property="checkKind" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -73,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, kind_name, p_id, p_name, status, kind_integral, kind_intro, need_supp_doc, need_supp_file, 
-    need_check, check_kind
+    id, kind_name, p_id, p_name, has_child, has_act, status, kind_integral, kind_intro, 
+    need_supp_doc, need_supp_file, check_kind
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.second.lhj.applykind.po.ApplyKindExample" >
     select
@@ -108,13 +109,15 @@
   </delete>
   <insert id="insert" parameterType="cn.second.lhj.applykind.po.ApplyKind" >
     insert into apply_kind (id, kind_name, p_id, 
-      p_name, status, kind_integral, 
-      kind_intro, need_supp_doc, need_supp_file, 
-      need_check, check_kind)
+      p_name, has_child, has_act, 
+      status, kind_integral, kind_intro, 
+      need_supp_doc, need_supp_file, check_kind
+      )
     values (#{id,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}, #{pId,jdbcType=INTEGER}, 
-      #{pName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{kindIntegral,jdbcType=DOUBLE}, 
-      #{kindIntro,jdbcType=VARCHAR}, #{needSuppDoc,jdbcType=INTEGER}, #{needSuppFile,jdbcType=INTEGER}, 
-      #{needCheck,jdbcType=INTEGER}, #{checkKind,jdbcType=INTEGER})
+      #{pName,jdbcType=VARCHAR}, #{hasChild,jdbcType=INTEGER}, #{hasAct,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{kindIntegral,jdbcType=DOUBLE}, #{kindIntro,jdbcType=VARCHAR}, 
+      #{needSuppDoc,jdbcType=INTEGER}, #{needSuppFile,jdbcType=INTEGER}, #{checkKind,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.second.lhj.applykind.po.ApplyKind" >
     insert into apply_kind
@@ -131,6 +134,12 @@
       <if test="pName != null" >
         p_name,
       </if>
+      <if test="hasChild != null" >
+        has_child,
+      </if>
+      <if test="hasAct != null" >
+        has_act,
+      </if>
       <if test="status != null" >
         status,
       </if>
@@ -145,9 +154,6 @@
       </if>
       <if test="needSuppFile != null" >
         need_supp_file,
-      </if>
-      <if test="needCheck != null" >
-        need_check,
       </if>
       <if test="checkKind != null" >
         check_kind,
@@ -166,6 +172,12 @@
       <if test="pName != null" >
         #{pName,jdbcType=VARCHAR},
       </if>
+      <if test="hasChild != null" >
+        #{hasChild,jdbcType=INTEGER},
+      </if>
+      <if test="hasAct != null" >
+        #{hasAct,jdbcType=INTEGER},
+      </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
       </if>
@@ -180,9 +192,6 @@
       </if>
       <if test="needSuppFile != null" >
         #{needSuppFile,jdbcType=INTEGER},
-      </if>
-      <if test="needCheck != null" >
-        #{needCheck,jdbcType=INTEGER},
       </if>
       <if test="checkKind != null" >
         #{checkKind,jdbcType=INTEGER},
@@ -210,6 +219,12 @@
       <if test="record.pName != null" >
         p_name = #{record.pName,jdbcType=VARCHAR},
       </if>
+      <if test="record.hasChild != null" >
+        has_child = #{record.hasChild,jdbcType=INTEGER},
+      </if>
+      <if test="record.hasAct != null" >
+        has_act = #{record.hasAct,jdbcType=INTEGER},
+      </if>
       <if test="record.status != null" >
         status = #{record.status,jdbcType=INTEGER},
       </if>
@@ -225,9 +240,6 @@
       <if test="record.needSuppFile != null" >
         need_supp_file = #{record.needSuppFile,jdbcType=INTEGER},
       </if>
-      <if test="record.needCheck != null" >
-        need_check = #{record.needCheck,jdbcType=INTEGER},
-      </if>
       <if test="record.checkKind != null" >
         check_kind = #{record.checkKind,jdbcType=INTEGER},
       </if>
@@ -242,12 +254,13 @@
       kind_name = #{record.kindName,jdbcType=VARCHAR},
       p_id = #{record.pId,jdbcType=INTEGER},
       p_name = #{record.pName,jdbcType=VARCHAR},
+      has_child = #{record.hasChild,jdbcType=INTEGER},
+      has_act = #{record.hasAct,jdbcType=INTEGER},
       status = #{record.status,jdbcType=INTEGER},
       kind_integral = #{record.kindIntegral,jdbcType=DOUBLE},
       kind_intro = #{record.kindIntro,jdbcType=VARCHAR},
       need_supp_doc = #{record.needSuppDoc,jdbcType=INTEGER},
       need_supp_file = #{record.needSuppFile,jdbcType=INTEGER},
-      need_check = #{record.needCheck,jdbcType=INTEGER},
       check_kind = #{record.checkKind,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -265,6 +278,12 @@
       <if test="pName != null" >
         p_name = #{pName,jdbcType=VARCHAR},
       </if>
+      <if test="hasChild != null" >
+        has_child = #{hasChild,jdbcType=INTEGER},
+      </if>
+      <if test="hasAct != null" >
+        has_act = #{hasAct,jdbcType=INTEGER},
+      </if>
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
@@ -280,9 +299,6 @@
       <if test="needSuppFile != null" >
         need_supp_file = #{needSuppFile,jdbcType=INTEGER},
       </if>
-      <if test="needCheck != null" >
-        need_check = #{needCheck,jdbcType=INTEGER},
-      </if>
       <if test="checkKind != null" >
         check_kind = #{checkKind,jdbcType=INTEGER},
       </if>
@@ -294,12 +310,13 @@
     set kind_name = #{kindName,jdbcType=VARCHAR},
       p_id = #{pId,jdbcType=INTEGER},
       p_name = #{pName,jdbcType=VARCHAR},
+      has_child = #{hasChild,jdbcType=INTEGER},
+      has_act = #{hasAct,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
       kind_integral = #{kindIntegral,jdbcType=DOUBLE},
       kind_intro = #{kindIntro,jdbcType=VARCHAR},
       need_supp_doc = #{needSuppDoc,jdbcType=INTEGER},
       need_supp_file = #{needSuppFile,jdbcType=INTEGER},
-      need_check = #{needCheck,jdbcType=INTEGER},
       check_kind = #{checkKind,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

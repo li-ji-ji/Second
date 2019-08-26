@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.second.lhj.apply.po.Apply" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="kind_id" property="kindId" jdbcType="INTEGER" />
+    <result column="kind_name" property="kindName" jdbcType="VARCHAR" />
     <result column="stu_id" property="stuId" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="check_status" property="checkStatus" jdbcType="INTEGER" />
@@ -71,8 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, kind_id, stu_id, status, check_status, support_doc, support_file, apply_time, 
-    integral
+    id, kind_id, kind_name, stu_id, status, check_status, support_doc, support_file, 
+    apply_time, integral
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.second.lhj.apply.po.ApplyExample" >
     select
@@ -105,14 +106,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.second.lhj.apply.po.Apply" >
-    insert into apply (id, kind_id, stu_id, 
-      status, check_status, support_doc, 
-      support_file, apply_time, integral
-      )
-    values (#{id,jdbcType=INTEGER}, #{kindId,jdbcType=INTEGER}, #{stuId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{checkStatus,jdbcType=INTEGER}, #{supportDoc,jdbcType=VARCHAR}, 
-      #{supportFile,jdbcType=VARCHAR}, #{applyTime,jdbcType=TIMESTAMP}, #{integral,jdbcType=DOUBLE}
-      )
+    insert into apply (id, kind_id, kind_name, 
+      stu_id, status, check_status, 
+      support_doc, support_file, apply_time, 
+      integral)
+    values (#{id,jdbcType=INTEGER}, #{kindId,jdbcType=INTEGER}, #{kindName,jdbcType=VARCHAR}, 
+      #{stuId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{checkStatus,jdbcType=INTEGER}, 
+      #{supportDoc,jdbcType=VARCHAR}, #{supportFile,jdbcType=VARCHAR}, #{applyTime,jdbcType=TIMESTAMP}, 
+      #{integral,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="cn.second.lhj.apply.po.Apply" >
     insert into apply
@@ -122,6 +123,9 @@
       </if>
       <if test="kindId != null" >
         kind_id,
+      </if>
+      <if test="kindName != null" >
+        kind_name,
       </if>
       <if test="stuId != null" >
         stu_id,
@@ -151,6 +155,9 @@
       </if>
       <if test="kindId != null" >
         #{kindId,jdbcType=INTEGER},
+      </if>
+      <if test="kindName != null" >
+        #{kindName,jdbcType=VARCHAR},
       </if>
       <if test="stuId != null" >
         #{stuId,jdbcType=VARCHAR},
@@ -190,6 +197,9 @@
       <if test="record.kindId != null" >
         kind_id = #{record.kindId,jdbcType=INTEGER},
       </if>
+      <if test="record.kindName != null" >
+        kind_name = #{record.kindName,jdbcType=VARCHAR},
+      </if>
       <if test="record.stuId != null" >
         stu_id = #{record.stuId,jdbcType=VARCHAR},
       </if>
@@ -220,6 +230,7 @@
     update apply
     set id = #{record.id,jdbcType=INTEGER},
       kind_id = #{record.kindId,jdbcType=INTEGER},
+      kind_name = #{record.kindName,jdbcType=VARCHAR},
       stu_id = #{record.stuId,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       check_status = #{record.checkStatus,jdbcType=INTEGER},
@@ -236,6 +247,9 @@
     <set >
       <if test="kindId != null" >
         kind_id = #{kindId,jdbcType=INTEGER},
+      </if>
+      <if test="kindName != null" >
+        kind_name = #{kindName,jdbcType=VARCHAR},
       </if>
       <if test="stuId != null" >
         stu_id = #{stuId,jdbcType=VARCHAR},
@@ -264,6 +278,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.second.lhj.apply.po.Apply" >
     update apply
     set kind_id = #{kindId,jdbcType=INTEGER},
+      kind_name = #{kindName,jdbcType=VARCHAR},
       stu_id = #{stuId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       check_status = #{checkStatus,jdbcType=INTEGER},

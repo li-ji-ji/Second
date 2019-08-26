@@ -9,6 +9,10 @@ public class ApplyKind {
 
     private String pName;
 
+    private Integer hasChild;
+
+    private Integer hasAct;
+
     private Integer status;
 
     private Double kindIntegral;
@@ -18,8 +22,6 @@ public class ApplyKind {
     private Integer needSuppDoc;
 
     private Integer needSuppFile;
-
-    private Integer needCheck;
 
     private Integer checkKind;
 
@@ -53,6 +55,22 @@ public class ApplyKind {
 
     public void setpName(String pName) {
         this.pName = pName == null ? null : pName.trim();
+    }
+
+    public Integer getHasChild() {
+        return hasChild;
+    }
+
+    public void setHasChild(Integer hasChild) {
+        this.hasChild = hasChild;
+    }
+
+    public Integer getHasAct() {
+        return hasAct;
+    }
+
+    public void setHasAct(Integer hasAct) {
+        this.hasAct = hasAct;
     }
 
     public Integer getStatus() {
@@ -93,14 +111,6 @@ public class ApplyKind {
 
     public void setNeedSuppFile(Integer needSuppFile) {
         this.needSuppFile = needSuppFile;
-    }
-
-    public Integer getNeedCheck() {
-        return needCheck;
-    }
-
-    public void setNeedCheck(Integer needCheck) {
-        this.needCheck = needCheck;
     }
 
     public Integer getCheckKind() {

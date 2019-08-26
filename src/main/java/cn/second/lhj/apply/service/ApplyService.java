@@ -14,24 +14,42 @@ import cn.second.lhj.apply.po.Apply;
 public interface ApplyService {
 	
 	/*-----------------------------------------查询---------------------------------------------*/
+	//查询所有申请记录条数
+	public int countApplyAll()throws Exception;
 	//查询所有申请记录
 	public List<Apply> getApplyAll() throws Exception;
+	//查询所有申请记录（分页）
+	public List<Apply> getApplyAllLimit(int page,int count) throws Exception;
 	//根据ID查询申请记录
 	public Apply getApplyById(Integer id) throws Exception;
 	//根据申请种类查询申请记录
 	public List<Apply> getApplyByKind(Integer kindId)throws Exception;
+	//根据申请种类查询申请记录（分页）
+	public List<Apply> getApplyByKindLimit(Integer kindId,int page,int count)throws Exception;
 	//根据学生学号查询申请记录
 	public List<Apply> getApplyByStuId(String stuId)throws Exception;
+	//根据学生学号查询申请记录（分页）
+	public List<Apply> getApplyByStuIdLimit(String stuId,int page,int count)throws Exception;
+	//根据学生学号以及审核状态查询申请记录
+	public List<Apply> getApplyByStuIdAndCheckStatus(String stuId,Integer checkStatus)throws Exception;
+	//根据学生学号以及审核状态查询申请记录（分页）
+	public List<Apply> getApplyByStuIdAndCheckStatusLimit(String stuId,Integer checkStatus,int page,int count)throws Exception;
 	//根据申请状态查询申请
 	public List<Apply> getApplyByStatus(Integer status)throws Exception;
+	//根据申请状态查询申请（分页）
+	public List<Apply> getApplyByStatusLimit(Integer status,int page,int count)throws Exception;
 	//根据审核情况查询申请记录
 	public List<Apply> getApplyByCheckStatus(Integer checkStatus) throws Exception;
+	//根据审核情况查询申请记录（分页）
+	public List<Apply> getApplyByCheckStatusLimit(Integer checkStatus,int page,int count) throws Exception;
 	//根据是否有佐证材料查询申请记录
 	public List<Apply> getApplyByDoc(String doc) throws Exception;
 	//根据是否有附件查询申请记录
 	public List<Apply> getApplyByFile(String file) throws Exception;
 	//根据积分查询申请记录
 	public List<Apply> getApplyByIntegral(Double integral) throws Exception;
+	//根据积分查询申请记录（分页）
+	public List<Apply> getApplyByIntegralLimit(Double integral,int page,int count) throws Exception;
 	/*-----------------------------------------查询---------------------------------------------*/
 	
 	

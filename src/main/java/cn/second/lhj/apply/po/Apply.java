@@ -7,6 +7,8 @@ public class Apply {
 
     private Integer kindId;
 
+    private String kindName;
+
     private String stuId;
 
     private Integer status;
@@ -35,6 +37,14 @@ public class Apply {
 
     public void setKindId(Integer kindId) {
         this.kindId = kindId;
+    }
+
+    public String getKindName() {
+        return kindName;
+    }
+
+    public void setKindName(String kindName) {
+        this.kindName = kindName == null ? null : kindName.trim();
     }
 
     public String getStuId() {

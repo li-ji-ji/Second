@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
+
 import cn.second.lhj.apply.mapper.ApplyMapperExtends;
 import cn.second.lhj.apply.po.Apply;
 import cn.second.lhj.apply.po.ApplyExample;
@@ -18,11 +20,23 @@ public class ApplyServiceImpl implements ApplyService {
 	
 	/*-----------------------------------------查询---------------------------------------------*/
 	@Override
+	public int countApplyAll()throws Exception{
+		// TODO 查询所有申请记录条数
+		return applyMapper.countByExample(null);
+	}
+	@Override
 	public List<Apply> getApplyAll() throws Exception {
 		// TODO 查询所有申请记录
 		return applyMapper.selectByExample(null);
 	}
 
+	@Override
+	public List<Apply> getApplyAllLimit(int page,int count) throws Exception{
+		// TODO 查询所有申请记录（分页）
+		PageHelper.startPage(page,count);
+		return applyMapper.selectByExample(null);
+	}
+	
 	@Override
 	public Apply getApplyById(Integer id) throws Exception {
 		//TODO 根据ID查询申请记录
@@ -39,14 +53,55 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 
 	@Override
+	public List<Apply> getApplyByKindLimit(Integer kindId,int page,int count)throws Exception{
+		// TODO 根据申请种类查询申请记录（分页）
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andKindIdEqualTo(kindId);
+		return applyMapper.selectByExample(example);
+	}
+	
+	@Override
 	public List<Apply> getApplyByStuId(String stuId) throws Exception {
-		// TODO 根据学生学号查询申请记录根据学生学号查询申请记录
+		// TODO 根据学生学号查询申请记录
 		ApplyExample example=new ApplyExample();
 		ApplyExample.Criteria criteria=example.createCriteria();
 		criteria.andStuIdEqualTo(stuId);
 		return applyMapper.selectByExample(example);
 	}
 
+	@Override
+	public List<Apply> getApplyByStuIdLimit(String stuId,int page,int count)throws Exception{
+		// TODO 根据学生学号查询申请记录（分页）
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andStuIdEqualTo(stuId);
+		return applyMapper.selectByExample(example);
+	}
+
+	//根据学生学号以及审核状态查询申请记录
+	@Override
+	public List<Apply> getApplyByStuIdAndCheckStatus(String stuId, Integer checkStatus) throws Exception {
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andStuIdEqualTo(stuId);
+		criteria.andCheckStatusEqualTo(checkStatus);
+		return applyMapper.selectByExample(example);
+	}
+	//根据学生学号以及审核状态查询申请记录（分页）
+	@Override
+	public List<Apply> getApplyByStuIdAndCheckStatusLimit(String stuId, Integer checkStatus, int page, int count)
+			throws Exception {
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andStuIdEqualTo(stuId);
+		criteria.andCheckStatusEqualTo(checkStatus);
+		return applyMapper.selectByExample(example);
+	}
+	
 	@Override
 	public List<Apply> getApplyByStatus(Integer status) throws Exception {
 		// TODO 根据申请状态查询申请
@@ -55,7 +110,16 @@ public class ApplyServiceImpl implements ApplyService {
 		criteria.andCheckStatusEqualTo(status);
 		return applyMapper.selectByExample(example);
 	}
-
+	
+	@Override
+	public List<Apply> getApplyByStatusLimit(Integer status,int page,int count)throws Exception{
+		//根据申请状态查询申请（分页）
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andCheckStatusEqualTo(status);
+		return applyMapper.selectByExample(example);
+	}
 	@Override
 	public List<Apply> getApplyByCheckStatus(Integer checkStatus) throws Exception {
 		// TODO 根据审核情况查询申请记录
@@ -65,6 +129,16 @@ public class ApplyServiceImpl implements ApplyService {
 		return applyMapper.selectByExample(example);
 	}
 
+	@Override
+	public List<Apply> getApplyByCheckStatusLimit(Integer checkStatus,int page,int count) throws Exception{
+		// TODO 根据审核情况查询申请记录（分页）
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andCheckStatusEqualTo(checkStatus);
+		return applyMapper.selectByExample(example);
+	}
+	
 	@Override
 	public List<Apply> getApplyByDoc(String doc) throws Exception {
 		// TODO 根据是否有佐证材料查询申请记录(待定)
@@ -78,8 +152,18 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 
 	@Override
-	public List<Apply> getApplyByIntegral(Double integral) throws Exception {
+	public List<Apply> getApplyByIntegralLimit(Double integral,int page,int count) throws Exception {
 		// TODO 根据积分查询申请记录
+		PageHelper.startPage(page,count);
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andIntegralEqualTo(integral);
+		return applyMapper.selectByExample(example);
+	}
+	
+	@Override
+	public List<Apply> getApplyByIntegral(Double integral) throws Exception {
+		// TODO 根据积分查询申请记录（分页）
 		ApplyExample example=new ApplyExample();
 		ApplyExample.Criteria criteria=example.createCriteria();
 		criteria.andIntegralEqualTo(integral);
@@ -347,4 +431,5 @@ public class ApplyServiceImpl implements ApplyService {
 		}
 	}
 	/*-----------------------------------------修改---------------------------------------------*/
+
 }

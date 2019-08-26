@@ -74,7 +74,39 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 		criteria.andKindNameLike("%"+keyWord+"%");
 		return kindMapper.selectByExample(example);
 	}
-
+	@Override
+	public List<ApplyKind> getApplyKindByHasChild(Integer hasChild)throws Exception{
+		// TODO 根据分类等级查询分类
+		ApplyKindExample example=new ApplyKindExample();
+		ApplyKindExample.Criteria criteria=example.createCriteria();
+		criteria.andHasChildEqualTo(hasChild);
+		return kindMapper.selectByExample(example);
+	}
+	@Override
+	public List<ApplyKind> getApplyKindByHasChildLimit(Integer hasChild,Integer page,Integer count)throws Exception{
+		// TODO 根据分类等级查询分类（分页）
+		ApplyKindExample example=new ApplyKindExample();
+		ApplyKindExample.Criteria criteria=example.createCriteria();
+		criteria.andHasChildEqualTo(hasChild);
+		return kindMapper.selectByExample(example);
+	}
+	@Override
+	public List<ApplyKind> getApplyKindByHasAct(Integer hasAct)throws Exception{
+		// TODO 根据是否需要举办活动查询分类
+		ApplyKindExample example=new ApplyKindExample();
+		ApplyKindExample.Criteria criteria=example.createCriteria();
+		criteria.andHasActEqualTo(hasAct);
+		return kindMapper.selectByExample(example);
+	}
+	@Override
+	public List<ApplyKind> getApplyKindByHasActLimit(Integer hasAct,Integer page,Integer count)throws Exception{
+		//根据是否需要举办活动查询分类（分页）
+		ApplyKindExample example=new ApplyKindExample();
+		ApplyKindExample.Criteria criteria=example.createCriteria();
+		criteria.andHasActEqualTo(hasAct);
+		return kindMapper.selectByExample(example);
+	}
+	
 	@Override
 	public List<ApplyKind> getApplyKindByPid(Integer pId) throws Exception {
 		// TODO 根据上级分类ID查询分类
@@ -211,20 +243,14 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 	@Override
 	public List<ApplyKind> getApplyKindByCheckStatus(Integer checkStatus) throws Exception {
 		// TODO 根据是否需要审核查询分类
-		ApplyKindExample example=new ApplyKindExample();
-		ApplyKindExample.Criteria criteria=example.createCriteria();
-		criteria.andNeedCheckEqualTo(checkStatus);
-		return kindMapper.selectByExample(example);
+
+		return null;
 	}
 
 	@Override
 	public List<ApplyKind> getApplyKindByCheckStatusLimit(Integer checkStatus, Integer page, Integer count)throws Exception {
 		// TODO 根据是否需要审核查询分类（分页）
-		PageHelper.startPage(page,count);
-		ApplyKindExample example=new ApplyKindExample();
-		ApplyKindExample.Criteria criteria=example.createCriteria();
-		criteria.andNeedCheckEqualTo(checkStatus);
-		return kindMapper.selectByExample(example);
+		return null;
 	}
 
 	@Override
@@ -255,6 +281,7 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 		// TODO 添加单个分类
 		try {
 			kindMapper.insertSelective(applyKind);
+			setApplyKindHasChildByHasChild(applyKind.getpId());
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -301,6 +328,54 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 			applyKind.setId(id);
 			applyKind.setStatus(0);
 			kindMapper.updateByPrimaryKeySelective(applyKind);
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	@Override
+	public int setApplyKindHasChildByHasChild(Integer id) throws Exception{
+		// TODO 判断是否有子分类并修改
+		try {
+			ApplyKindExample example=new ApplyKindExample();
+			ApplyKindExample.Criteria criteria=example.createCriteria();
+			criteria.andPIdEqualTo(id);
+			if(kindMapper.selectByExample(example).size()>0) {
+				setApplyKindHasChild(id);
+			}
+			else {
+				setApplyKindHasNotChild(id);
+			}
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+
+	@Override
+	public int setApplyKindHasChild(Integer id) throws Exception{
+		// TODO 修改为拥有子分类
+		try {
+			ApplyKind applyKind=new ApplyKind();
+			applyKind.setId(id);
+			applyKind.setHasChild(1);
+			updateApplyKindOne(applyKind);
+			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	@Override
+	public int setApplyKindHasNotChild(Integer id) throws Exception{
+		// TODO 修改为未拥有子分类
+		try {
+			ApplyKind applyKind=new ApplyKind();
+			applyKind.setId(id);
+			applyKind.setHasChild(0);
+			updateApplyKindOne(applyKind);
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -370,31 +445,13 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 	@Override
 	public int setApplyKindCheckOn(Integer id) throws Exception {
 		// TODO 启用审核
-		try {
-			ApplyKind applyKind=new ApplyKind();
-			applyKind.setId(id);
-			applyKind.setNeedCheck(1);
-			kindMapper.updateByPrimaryKeySelective(applyKind);
-			return 1;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
+		return 0;
 	}
 
 	@Override
 	public int setApplyKindCheckOff(Integer id) throws Exception {
 		// TODO 禁用审核
-		try {
-			ApplyKind applyKind=new ApplyKind();
-			applyKind.setId(id);
-			applyKind.setNeedCheck(0);
-			kindMapper.updateByPrimaryKeySelective(applyKind);
-			return 1;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
+		return 0;
 	}
 
 	@Override
@@ -436,7 +493,9 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 	public int delApplyKindOneById(Integer id) throws Exception {
 		// TODO 根据ID删除单个分类
 		try {
+			ApplyKind applyKind=getApplyKindById(id);
 			kindMapper.deleteByPrimaryKey(id);
+			setApplyKindHasChildByHasChild(applyKind.getpId());
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -449,7 +508,9 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 		// TODO 根据ID批量删除分类
 		try {
 			for(Integer id:idList) {
+				ApplyKind applyKind=getApplyKindById(id);
 				kindMapper.deleteByPrimaryKey(id);
+				setApplyKindHasChildByHasChild(applyKind.getpId());
 			}
 			return 1;
 		} catch (Exception e) {
@@ -466,6 +527,7 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 			ApplyKindExample.Criteria criteria=example.createCriteria();
 			criteria.andPIdEqualTo(pId);
 			kindMapper.deleteByExample(example);
+			setApplyKindHasNotChild(pId);
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -521,16 +583,7 @@ public class ApplyKindServiceImpl implements ApplyKindService {
 	@Override
 	public int delApplyKindListByCheckStatus(Integer checkStatus) throws Exception {
 		// TODO 根据是否需要审核批量删除分类
-		try {
-			ApplyKindExample example=new ApplyKindExample();
-			ApplyKindExample.Criteria criteria=example.createCriteria();
-			criteria.andNeedCheckEqualTo(checkStatus);
-			kindMapper.deleteByExample(example);
-			return 1;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
+		return 0;
 	}
 
 	@Override

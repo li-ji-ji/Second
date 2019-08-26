@@ -1,4 +1,4 @@
-package cn.second.lhj.applykind.api.feign;
+package cn.second.lhj.applykind.api;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import cn.second.lhj.applykind.po.ApplyKind;
+import cn.second.lhj.applykind.po.ApplyKindExample;
 import cn.second.lhj.applykind.service.ApplyKindService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -78,7 +79,32 @@ public class ApplyKindAPI {
 		// TODO 根据分类名称查询分类（模糊）
 		return kindService.getApplyKindByNameLike(keyWord);
 	}
+    @ApiOperation(value="根据分类等级查询分类")
+    @RequestMapping("/getApplyKindByKindLevel")
+	public List<ApplyKind> getApplyKindByKindLevel(@RequestParam("hasChild")Integer hasChild)throws Exception{
+		// TODO 根据分类等级查询分类
+		return kindService.getApplyKindByHasChild(hasChild);
+	}
+    @ApiOperation(value="根据分类等级查询分类（分页）")
+    @RequestMapping("/getApplyKindByKindLevelLimit")
+	public List<ApplyKind> getApplyKindByKindLevelLimit(@RequestParam("hasChild")Integer hasChild,@RequestParam("page")Integer page,@RequestParam("count")Integer count)throws Exception{
+		// TODO 根据分类等级查询分类（分页）
+		return kindService.getApplyKindByHasChildLimit(hasChild, page, count);
+	}
 
+    @ApiOperation(value="根据是否需要举办活动查询分类")
+    @RequestMapping("/getApplyKindByHasAct")
+	public List<ApplyKind> getApplyKindByHasAct(@RequestParam("hasAct")Integer hasAct)throws Exception{
+		// TODO 根据是否需要举办活动查询分类
+		return kindService.getApplyKindByHasAct(hasAct);
+	}
+
+    @ApiOperation(value="根据是否需要举办活动查询分类（分页）")
+    @RequestMapping("/getApplyKindByHasActLimit")
+	public List<ApplyKind> getApplyKindByHasActLimit(@RequestParam("hasAct")Integer hasAct,@RequestParam("page")Integer page,@RequestParam("count")Integer count)throws Exception{
+		//根据是否需要举办活动查询分类（分页）
+		return kindService.getApplyKindByHasActLimit(hasAct, page, count);
+	}
     @ApiOperation(value="根据上级分类ID查询分类")
     @RequestMapping("/getApplyKindByPid")
 	public List<ApplyKind> getApplyKindByPid(@RequestParam("pId") Integer pId) throws Exception {
@@ -246,7 +272,24 @@ public class ApplyKindAPI {
 		// TODO 禁用分类
 		return kindService.setApplyKindStatusOff(id);
 	}
-
+    @ApiOperation(value="判断是否有子分类并修改")
+    @RequestMapping("/setApplyKindHasChildByHasChild")
+	public int setApplyKindHasChildByHasChild(@RequestParam("id")Integer id) throws Exception{
+		// TODO 判断是否有子分类并修改
+    	return kindService.setApplyKindHasChildByHasChild(id);
+	}
+    @ApiOperation(value="修改为拥有子分类")
+    @RequestMapping("/setApplyKindHasChild")
+	public int setApplyKindHasChild(@RequestParam("id")Integer id) throws Exception{
+    	// TODO 修改为拥有子分类
+    	return kindService.setApplyKindHasChild(id);
+    }
+    @ApiOperation(value="修改为未拥有子分类")
+    @RequestMapping("/setApplyKindHasNotChild")
+	public int setApplyKindHasNotChild(@RequestParam("id")Integer id) throws Exception{
+    	// TODO 修改为未拥有子分类
+    	return kindService.setApplyKindHasNotChild(id);
+    }
     @ApiOperation(value="启用佐证材料")
     @RequestMapping("/setApplyKindDocOn")
 	public int setApplyKindDocOn(@RequestParam("id")Integer id) throws Exception {
