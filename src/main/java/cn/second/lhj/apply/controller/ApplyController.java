@@ -138,4 +138,11 @@ public class ApplyController {
 		return applyFeign.getApplyKindByPid(pId);
 	}
 	
+	//查看详情
+	@RequestMapping("/toDetail")
+	public String toDetail(Model model,@RequestParam("id")Integer id)throws Exception{
+		Apply apply=applyFeign.getApplyById(id);
+		model.addAttribute("apply", apply);
+		return "apply/Detail";
+	}
 }

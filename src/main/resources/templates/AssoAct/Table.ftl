@@ -70,16 +70,16 @@
 					<td>${act.activityFinishTime?date}</td>
 					<td>
 						<div class="button-group">
-							<a href="${base}/assoAct/getMenuByPid?id=${act.id}" class="button border-main" style="padding:6px 10px;">查看子菜单</a>
+							<a href="${base}/assoAct/toDetail?id=${act.id}" class="button border-main" style="padding:6px 10px;">查看详情</a>
 			  				<a href="${base}/assoAct/toEdit?id=${act.id}" class="button border-green" style="padding:6px 10px;">修改</a>
 			  				<a href="${base}/assoAct/deleteActivityOneById?id=${act.id}" onClick="return confirm('确认删除？') " class="button border-red" style="padding:6px 10px;">删除</a>
-			  				<#if act.activityStatus==0>
+			  				<!-- <#if act.activityStatus==0>
 			  					<a href="${base}/assoAct/updateActivityStatusOpen?id=${act.id}" onClick="return confirm('确认开启活动？') " class="button border-green" style="padding:6px 10px;">开启</a>
 							<#elseif act.activityStatus==1>
 								<a href="${base}/assoAct/updateActivityStatusClose?id=${act.id}" onClick="return confirm('确认结束活动？') " class="button border-red" style="padding:6px 10px;">结束</a>
 							<#else>
 			  					<a href="#" onClick="return confirm('活动已结束，请重新发起') " class="button border-gray" style="padding:6px 10px;">已结束</a>
-							</#if>
+							</#if> -->
 						</div>
 					</td>
 				</tr>
@@ -105,7 +105,7 @@
 			        	<#if (pageNow!=pageNum)><a href="${base}/assoAct/toTable?page=${pageNow+1}">下一页</a></#if>
 			        	<a href="${base}/assoAct/toTable?page=${pageNum}">尾页</a>
 		    		</#if>
-		        	<span href="javascript:void(0);">共${pageNum}页</span>
+		        	<span>共${pageNum}页</span>
 	        	 </div>
 	        </td>
 	      </tr>

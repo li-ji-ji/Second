@@ -84,7 +84,7 @@
 					<td>${apply.integral?if_exists}</td>
 					<td>
 						<div class="button-group">
-							<a href="${base}/apply/toKindByPid?id=${apply.id}" class="button border-main" style="padding:6px 10px;">查看详情</a>
+							<a href="${base}/apply/toDetail?id=${apply.id}" class="button border-main" style="padding:6px 10px;">查看详情</a>
 			  				<a href="${base}/apply/toEdit?id=${apply.id}" class="button border-green" style="padding:6px 10px;">修改</a>
 			  				<a href="${base}/apply/delApplyOneById?id=${apply.id}" onClick="return confirm('确认删除？') " class="button border-red" style="padding:6px 10px;">删除</a>
 			  				<#if apply.checkStatus==1>

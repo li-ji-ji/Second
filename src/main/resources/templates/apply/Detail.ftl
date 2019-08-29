@@ -12,74 +12,46 @@
 <link rel="stylesheet" href="${base}/admin/css/admin.css">
 <script type="text/javascript" src="${base}/admin/js/bootstrap.min.js"></script>
 <script src="${base}/admin/js/pintuer.js"></script>
-<script src="${base}/admin/js/pintuer.js"></script>
 <!-- 日期组件 -->
 <link href="${base}/js/bootstrapDatetime/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="${base}/js/bootstrapDatetime/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="${base}/js/bootstrapDatetime/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="${base}/js/bootstrapDatetime/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-
 </head>
 <body>
 <div class="panel admin-panel">
-  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加申请</strong></div>
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改申请</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" id="insertForm" action="${base}/apply/insertApplyOne">  
+    <form method="post" class="form-x" action="${base}/apply/updateApplyOne">  
       <div class="form-group">
         <div class="label">
           <label>分类ID：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" readonly name="id" placeholder="系统自动分配" />
+          <p  class="input w50">${apply.id}</p>
         </div>
       </div>
 
       
-     <if condition="$iscid eq 1">
+      <if condition="$iscid eq 1">
         <div class="form-group">
           <div class="label">
             <label>申请分类：</label>
           </div>
           <div class="field">
-          	<input type="text" class="input w50" value="" readonly id="kindName" name="kindName" onclick="openKindList(this)" data-validate="required:请输入标题" />
-			<div class="btn-group" style="margin:4px 0 4px 10px;">
-			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 一级分类<span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" >
-			  	<#list kindList as kind>
-			    	<li onclick="setChindKindList(this,${kind.id})" ><a href="#">${kind.kindName}</a></li>
-			    </#list>
-			  </ul>
-		    </div>
-		    <div class="btn-group" disabled style="margin:4px 0 4px 10px;">
-			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				二级分类<span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu">
-			  	<li><a href="#">请选择上级分类</a></li>
-			  </ul>
-		    </div>
-		    <div class="btn-group"  style="margin:4px 0 4px 10px;">
-			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				三级分类<span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu">
-			  	<li><a href="#">请选择上级分类</a></li>
-			  </ul>
-		    </div>
+          	<p class="input w50">${apply.kindName}</p>    
        	  </div>
         </div>
       </if>
 
-    <input type="hidden" class="input w50" id="kindId" name="kindId" readonly value="" data-validate="required:请输入标题" />
+    <input type="hidden" class="input w50" id="kindId" name="kindId" readonly value="${apply.kindId}" data-validate="required:请输入标题" />
 
     <div class="form-group">
        <div class="label">
          <label>学生ID：</label>
        </div>
        <div class="field">
-         <input type="text" class="input w50" name="stuId" data-validate="required:请输入标题" />
+          	<p class="input w50">${apply.stuId}</p>   
        </div>
     </div>
     
@@ -88,13 +60,15 @@
             <label>申请状态：</label>
           </div>
           <div class="field">
-            <select name="status" class="input w50">
-				<option value="0">申请中</option>
-            	<option value="1">已通过</option>
-            	<option value="2">申诉中</option>
-            	<option value="3">已取消</option>
-            </select>
-            <div class="tips"></div>
+          	<#if apply.status== 0>
+          		<p class="input w50">申请中</p>
+          	<#elseif apply.status== 1>
+          		<p class="input w50">已通过</p>
+          	<#elseif apply.status== 2>
+          		<p class="input w50">申诉中</p>
+          	<#elseif apply.status== 3>
+          		<p class="input w50">已取消</p>
+          	</#if>
           </div>
     </div>
     <div class="form-group">
@@ -102,12 +76,13 @@
             <label>审核状态：</label>
           </div>
           <div class="field">
-            <select name="checkStatus" class="input w50">
-				<option value="0">审核中</option>
-            	<option value="1">已通过</option>
-            	<option value="2">已驳回</option>
-            </select>
-            <div class="tips"></div>
+          	<#if apply.status== 0>
+          		<p class="input w50">审核中</p>
+          	<#elseif apply.status== 1>
+          		<p class="input w50">已通过</p>
+          	<#elseif apply.status== 2>
+          		<p class="input w50">已驳回</p>
+          	</#if>
           </div>
     </div>
     
@@ -116,8 +91,7 @@
           <label>佐证材料：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" name="supportDoc"/>
-          <div class="tips"></div>
+          	<p class="input w50">${apply.supportDoc}</p>
         </div>
     </div>
     
@@ -126,8 +100,7 @@
           <label>附件：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50"  name="supportFile"/>
-          <div class="tips"></div>
+          	<p class="input w50">${apply.supportFile}</p>
         </div>
     </div>
     
@@ -135,9 +108,8 @@
         <div class="label">
           <label>提交日期：</label>
         </div>
-        <div class="field input-group date form_datetime" style="width:21.5%;" data-date="" data-date-format="yyyy-MM-dd hh:mm" data-link-field="dtp_input1">
-            <input class="input w50 form-control" name="applyTime" type="text" value="" readonly>
-			<span class="input-group-addon"><span class="glyphicon glyphicon-th" style="display:none;"></span><span class="icon-plus-square-o"></span></span>
+        <div class="field">
+          	<p class="input w50">${apply.applyTime?datetime}</p>
         </div>
     </div>
     
@@ -146,17 +118,15 @@
           <label>申请积分：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" id="integral" readonly  name="integral" data-validate="required:请输入标题" />
-          <div class="tips"></div>
+          	<p class="input w50">${apply.integral}</p>
         </div>
     </div>
 
 
-
       
         <div style="padding-left: 10%;" class="field">
-          <a href="javascript:void(0)" class="button bg-main"  onclick="submitCheck()">提交</a>
-          <button class="button bg-main" type="reset"> 取消</button>
+          <a href="${base}/apply/checkApplyOne?id=${apply.id}" onClick="return confirm('确认通过审核？') " class="button border-green" style="text-decoration: none;">通过申请</a>
+          <a href="${base}/apply/rejectApplyOne?id=${apply.id}" onClick="return confirm('确认驳回申请？') " class="button border-red" style="text-decoration: none;margin-left: 5%;">驳回申请</a>
         </div>
     </form>
   </div>
@@ -167,27 +137,18 @@
 			kindName=$(this).children('option:selected').text();
 			//console.log(pName);
 			$('#kindName').attr("value",kindName);
-		})
-		function submitCheck(){
-			if($('#selectpId').children('option:selected').text()=="请选择分类"){
-				alert("请选择分类");
-				return false;
-			}
-			else{
-				$("#insertForm").submit();
-			}
-		};
+		});
 
-		$('.form_datetime').datetimepicker({
+		$('.form_date').datetimepicker({
 	        language:  'zh-CN',
 	        weekStart: 1,
 	        todayBtn:  1,
 			autoclose: 1,
 			todayHighlight: 1,
 			startView: 2,
+			minView: 2,
 			forceParse: 0
 	    });
-		
 		function openKindList(e){
 			if(!($(e).next().hasClass("open"))){
 				setTimeout(function(){
@@ -243,6 +204,41 @@
 					$("#integral").attr("value",kindAll[i].kindIntegral)
 				}
 			}
+		}
+/* 		//点击获取下级分类并渲染
+		function setChindKindList(e,pId){
+			$.ajax({
+				  type: 'get',
+				  url: "${base}/apply/getApplyKindAll",
+				  //data: "pId="+pId,
+				  dataType: "JSON",
+				  success:function(res){
+					  kindList=res
+					  console.log(kindList);
+					  if(res.length>0){
+						  $(e).parent().parent().next().children("ul").children(":first-child").remove();
+						  for(var i=0;i<res.length;i++){
+							  if(res[i].hasChild==1){
+								  $(e).parent().parent().next().children("ul").append("<li onclick='setChindKindList(this,"+res[i].id+")'><a href='#'>"+res[i].kindName+"</a></li>")
+							  }
+							  else{
+								  $(e).parent().parent().next().children("ul").append("<li onclick='setChindKindList(this,"+res[i].id+")'><a href='#'>"+res[i].kindName+"</a> </li>")
+							  }
+						  }
+					  }
+					  else{
+						  $(e).parent().parent().next().children("ul").children("li").children("a").text("无")
+						  kindList=res
+					  }
+					  setTimeout(function(){
+							$(e).parent().parent().next().addClass("open")
+					  },10);
+				  } 
+				});
+		} */
+		//点击填写分类数据
+		function putMsgByKind(){
+			
 		}
 	</script>
 </body>

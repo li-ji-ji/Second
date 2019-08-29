@@ -134,8 +134,8 @@
         <div class="label">
           <label>提交日期：</label>
         </div>
-        <div class="field input-group date form_date" style="width:21.5%;" data-date="" data-date-format="yyyy-MM-dd" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-            <input class="input w50 form-control" name="applyTime" type="text" value="${apply.applyTime?date}" readonly>
+        <div class="field input-group date form_datetime" style="width:21.5%;" data-date="" data-date-format="yyyy-MM-dd hh:mm" data-link-field="dtp_input1" >
+            <input class="input w50 form-control" name="applyTime" type="text" value="${apply.applyTime?datetime}" readonly>
 			<span class="input-group-addon"><span class="glyphicon glyphicon-th" style="display:none;"></span><span class="icon-plus-square-o"></span></span>
         </div>
     </div>
@@ -167,14 +167,13 @@
 			$('#kindName').attr("value",kindName);
 		});
 
-		$('.form_date').datetimepicker({
+		$('.form_datetime').datetimepicker({
 	        language:  'zh-CN',
 	        weekStart: 1,
 	        todayBtn:  1,
 			autoclose: 1,
 			todayHighlight: 1,
 			startView: 2,
-			minView: 2,
 			forceParse: 0
 	    });
 		function openKindList(e){

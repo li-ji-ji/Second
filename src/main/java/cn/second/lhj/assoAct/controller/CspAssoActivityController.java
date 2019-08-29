@@ -11,7 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.fastjson.JSON;
+
+import cn.second.lhj.apply.feign.ApplyFeignInterface;
 import cn.second.lhj.apply.po.Apply;
+import cn.second.lhj.apply.po.ApplyKind;
 import cn.second.lhj.assoAct.dto.AssoActivityFormDto;
 import cn.second.lhj.assoAct.feign.AssoActFeignInterface;
 import cn.second.lhj.assoAct.po.CspAssoActivity;
@@ -24,7 +28,9 @@ public class CspAssoActivityController {
 	
 	@Autowired
 	private AssoActFeignInterface assoAct;
-	
+
+	@Autowired
+	private ApplyFeignInterface applyFeign;
 	//跳转到所有活动页面
 	@RequestMapping("/toTable")
 	public String toActTable(Model model,@RequestParam(value="page",required=false,defaultValue="1")Integer page,@RequestParam(value="count",required=false,defaultValue="5")Integer count) throws Exception {
@@ -62,6 +68,12 @@ public class CspAssoActivityController {
 		model.addAttribute("assoList",assoList);
 		List<CspAssoStudent> stuList=assoAct.getStuAll();
 		model.addAttribute("stuList",stuList);
+		//获取分类列表
+		List<ApplyKind> kindList=applyFeign.getApplyKindByPid(0);
+		model.addAttribute("kindList", kindList);
+		List<ApplyKind> getKindAll=applyFeign.getApplyKindAll();
+		String kindAll=JSON.toJSONString(getKindAll);
+		model.addAttribute("kindAll", kindAll);
 		return "AssoAct/EditForm";
 	}
 	
@@ -93,6 +105,12 @@ public class CspAssoActivityController {
 		List<CspAssoStudent> stuList=assoAct.getStuAll();
 		model.addAttribute("assoList", assoList);
 		model.addAttribute("stuList", stuList);
+		//获取分类列表
+		List<ApplyKind> kindList=applyFeign.getApplyKindByPid(0);
+		model.addAttribute("kindList", kindList);
+		List<ApplyKind> getKindAll=applyFeign.getApplyKindAll();
+		String kindAll=JSON.toJSONString(getKindAll);
+		model.addAttribute("kindAll", kindAll);
 		return "AssoAct/AddForm";
 	}
 	
@@ -120,5 +138,13 @@ public class CspAssoActivityController {
 		model.addAttribute("pageNow",1);
 		model.addAttribute("hasPage",0);
 		return "AssoAct/Table";
+	}
+	
+	//查看详情
+	@RequestMapping("/toDetail")
+	public String toDetail(Model model,@RequestParam("id")Integer id)throws Exception{
+		AssoActivityFormDto act=assoAct.getAssoActFormDto(id);
+		model.addAttribute("act", act);
+		return "AssoAct/Detail";
 	}
 }

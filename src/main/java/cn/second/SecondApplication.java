@@ -9,7 +9,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 @EnableDiscoveryClient //启用服务注册与发现
 @EnableFeignClients //启用feign进行远程调用
-//测试提交
 public class SecondApplication {
 
 	public static void main(String[] args) {
