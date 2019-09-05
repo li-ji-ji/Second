@@ -3,6 +3,7 @@ package cn.second.lhj.apply.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import com.alibaba.fastjson.JSONObject;
 import cn.second.lhj.apply.feign.ApplyFeignInterface;
 import cn.second.lhj.apply.po.Apply;
 import cn.second.lhj.apply.po.ApplyKind;
+import cn.second.lhj.authority.models.UserInfo;
 
 @Controller
 @RequestMapping("/apply")
@@ -24,6 +26,8 @@ public class ApplyController {
 
 	@Autowired
 	private ApplyFeignInterface applyFeign;
+	
+	
 	
 	//跳转到申请列表
 	@RequestMapping("/toTable")
@@ -121,6 +125,7 @@ public class ApplyController {
 	@RequestMapping("/checkApplyOne")
 	public String checkApplyOne(@RequestParam("id") Integer id)throws Exception{
 		applyFeign.checkApplyOneById(id);
+		getUserInfo();
 		return "redirect:toTable";
 	}
 	
@@ -144,5 +149,10 @@ public class ApplyController {
 		Apply apply=applyFeign.getApplyById(id);
 		model.addAttribute("apply", apply);
 		return "apply/Detail";
+	}
+	
+	public void getUserInfo()throws Exception{
+		UserInfo userInfo = (UserInfo) SecurityUtils.getSubject().getPrincipal();
+		System.out.println(userInfo.toString());
 	}
 }
