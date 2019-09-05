@@ -1,5 +1,7 @@
 package cn.second.lhj.apply.service.impl;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +13,17 @@ import cn.second.lhj.apply.mapper.ApplyMapperExtends;
 import cn.second.lhj.apply.po.Apply;
 import cn.second.lhj.apply.po.ApplyExample;
 import cn.second.lhj.apply.service.ApplyService;
+import cn.second.lhj.checkrecord.po.CheckRecord;
+import cn.second.lhj.checkrecord.service.CheckRecordService;
 
 @Service
 public class ApplyServiceImpl implements ApplyService {
 	
 	@Autowired
 	private ApplyMapperExtends applyMapper;
+	
+	@Autowired
+	private CheckRecordService crService;
 	
 	/*-----------------------------------------查询---------------------------------------------*/
 	@Override
@@ -236,6 +243,18 @@ public class ApplyServiceImpl implements ApplyService {
 			return 0;
 		}
 	}
+
+	//根据时间段查询已审核申请记录
+	@Override
+	public List<Apply> getApplyCheckedByDateBetween(Date startTime,Date endTime)throws Exception{
+		List<CheckRecord> recordList=crService.getCheckRecordByDateBetween(startTime, endTime);
+		List<Apply> applyList=new ArrayList();
+		for(CheckRecord record:recordList) {
+			Apply apply=applyMapper.selectByPrimaryKey(Integer.valueOf(record.getApplyId())); 
+			applyList.add(apply);
+		}
+		return applyList;
+	}
 	/*-----------------------------------------删除---------------------------------------------*/
 
 	/*-----------------------------------------修改---------------------------------------------*/
@@ -243,7 +262,16 @@ public class ApplyServiceImpl implements ApplyService {
 	public int updateApplyOne(Apply apply) throws Exception {
 		// TODO 修改单条申请记录
 		try {
+			Apply getApplyLast=applyMapper.selectByPrimaryKey(apply.getId());
+//			System.out.println(getApplyLast.getCheckStatus());
+//			System.out.println(apply.getCheckStatus());
 			applyMapper.updateByPrimaryKeySelective(apply);
+			if(getApplyLast.getCheckStatus()!=apply.getCheckStatus()) {
+				CheckRecord record=new CheckRecord();
+				record.setCheckStatus(apply.getCheckStatus());
+				record.setApplyId(String.valueOf(apply.getId()));
+				crService.addCheckRecordOne(record);
+			}
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -258,7 +286,14 @@ public class ApplyServiceImpl implements ApplyService {
 			Apply apply=new Apply();
 			apply.setId(id);
 			apply.setCheckStatus(1);
+			Apply getApplyLast=applyMapper.selectByPrimaryKey(id);
 			applyMapper.updateByPrimaryKeySelective(apply);
+			if(getApplyLast.getCheckStatus()!=1) {
+				CheckRecord record=new CheckRecord();
+				record.setCheckStatus(1);
+				record.setApplyId(String.valueOf(apply.getId()));
+				crService.addCheckRecordOne(record);
+			}
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -326,7 +361,14 @@ public class ApplyServiceImpl implements ApplyService {
 			Apply apply=new Apply();
 			apply.setId(id);
 			apply.setCheckStatus(2);
+			Apply getApplyLast=applyMapper.selectByPrimaryKey(id);
 			applyMapper.updateByPrimaryKeySelective(apply);
+			if(getApplyLast.getCheckStatus()!=2) {
+				CheckRecord record=new CheckRecord();
+				record.setCheckStatus(2);
+				record.setApplyId(String.valueOf(apply.getId()));
+				crService.addCheckRecordOne(record);
+			}
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -394,7 +436,14 @@ public class ApplyServiceImpl implements ApplyService {
 			Apply apply=new Apply();
 			apply.setId(id);
 			apply.setStatus(0);
+			Apply getApplyLast=applyMapper.selectByPrimaryKey(id);
 			applyMapper.updateByPrimaryKeySelective(apply);
+			if(getApplyLast.getCheckStatus()!=0) {
+				CheckRecord record=new CheckRecord();
+				record.setCheckStatus(0);
+				record.setApplyId(String.valueOf(apply.getId()));
+				crService.addCheckRecordOne(record);
+			}
 			return 1;
 		} catch (Exception e) {
 			e.printStackTrace();

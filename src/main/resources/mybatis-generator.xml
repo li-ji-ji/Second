@@ -9,15 +9,15 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://92.68.50.32:3306/second" userId="root"
-			password="wuzongbo751130">
+			connectionURL="jdbc:mysql://47.106.220.247:3306/second" userId="root"
+			password="123456">
 		</jdbcConnection>
 
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 		
-		<javaModelGenerator targetPackage="cn.second.lhj.applykind.po"
+		<javaModelGenerator targetPackage="cn.second.lhj.checkrecord.po"
 			targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -29,11 +29,11 @@
 		</sqlMapGenerator>
 
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.second.lhj.applykind.mapper" targetProject=".\src\main\java">
+			targetPackage="cn.second.lhj.checkrecord.mapper" targetProject=".\src\main\java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		<!-- <table tableName="apply"></table> -->
-		<table tableName="apply_kind"></table>
+		<table tableName="check_record"></table>
 		
 	</context>
 </generatorConfiguration>

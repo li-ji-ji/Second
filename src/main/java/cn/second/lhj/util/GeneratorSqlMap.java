@@ -33,12 +33,15 @@ public class GeneratorSqlMap {
 	
 	
 	
+	
+	
 	/*
 	 * public static void main(String[] args) throws Exception { try{
 	 * GeneratorSqlMap generatorSqlMap=new GeneratorSqlMap();
 	 * generatorSqlMap.generator();System.out.println("生成完毕"); }catch(Exception e){
 	 * e.printStackTrace(); } }
 	 */
+	 
 	 
 	 
 	 

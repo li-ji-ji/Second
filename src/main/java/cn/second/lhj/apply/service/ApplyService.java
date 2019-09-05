@@ -1,5 +1,6 @@
 package cn.second.lhj.apply.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -50,6 +51,8 @@ public interface ApplyService {
 	public List<Apply> getApplyByIntegral(Double integral) throws Exception;
 	//根据积分查询申请记录（分页）
 	public List<Apply> getApplyByIntegralLimit(Double integral,int page,int count) throws Exception;
+	//根据时间段查询已审核申请记录
+	public List<Apply> getApplyCheckedByDateBetween(Date startTime,Date endTime)throws Exception;
 	/*-----------------------------------------查询---------------------------------------------*/
 	
 	

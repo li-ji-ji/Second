@@ -1,8 +1,11 @@
 package cn.second.lhj.apply.api;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -133,6 +136,16 @@ public class ApplyAPI {
 	public List<Apply> getApplyByIntegralLimit(@RequestParam("integral")Double integral,@RequestParam("page")int page,@RequestParam("count")int count) throws Exception{
 		return applyService.getApplyByIntegralLimit(integral, page, count);
 	}
+
+	//根据时间段查询已审核申请记录
+    @ApiOperation(value="根据时间段查询已审核申请记录")
+	@RequestMapping("/getApplyCheckedByDateBetween")
+	public List<Apply> getApplyCheckedByDateBetween(@RequestParam("startTime")String getStartTime)throws Exception{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+		Date startTime = sdf.parse(getStartTime); 
+    	Date endTime=new Date();
+    	return applyService.getApplyCheckedByDateBetween(startTime, endTime);
+    }
 	/*-----------------------------------------查询---------------------------------------------*/
 	
 	

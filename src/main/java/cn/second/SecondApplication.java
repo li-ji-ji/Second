@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = {"cn.second.lhj.apply.mapper","cn.second.lhj.applykind.mapper"})
+@MapperScan(basePackages = {"cn.second.lhj.apply.mapper","cn.second.lhj.applykind.mapper","cn.second.lhj.checkrecord.mapper"})
 public class SecondApplication {
 
 	public static void main(String[] args) {
