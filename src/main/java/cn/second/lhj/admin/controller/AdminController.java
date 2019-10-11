@@ -1,4 +1,4 @@
-package cn.second.lhj.admin.controller;
+ package cn.second.lhj.admin.controller;
 
 import java.util.List;
 
@@ -8,19 +8,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import cn.second.lhj.assist.feign.MenuFeignInterface;
-import cn.second.lhj.assist.vm.MenuVM;
+import cn.second.lhj.menu.service.MenuService;
+import cn.second.lhj.menu.vm.MenuVM;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	
 	@Autowired
-	MenuFeignInterface menuFeign;
+	private MenuService menuService;
 	
 	@RequestMapping("/toIndex")
 	public String toIndex(Model model) throws Exception{
-		List<MenuVM> menus=menuFeign.getMenuVMAll();
+		List<MenuVM> menus=menuService.getMenuVMAll();
 		//System.out.println(menus.toString());
 		model.addAttribute("menus",menus);
 		return "admin/index";
