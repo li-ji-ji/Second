@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="${base}/js/assets/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="${base}${staticPath}/js/assets/css/base.css" />
 </head>
 <body>
 	<!-- COIDEA:header START -->
@@ -22,6 +22,6 @@
     </section>   
     <!-- COIDEA:demo END -->
 	
-	<script src="${base}/js/assets/js/demo.js"></script>
+	<script src="${base}${staticPath}/js/assets/js/demo.js"></script>
 </body>
 </html>

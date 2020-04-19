@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @CrossOrigin
 @Api
+@RequestMapping("/api/applyKind")
 public class ApplyKindAPI {
 
 	@Autowired

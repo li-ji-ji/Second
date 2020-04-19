@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="testTable" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://203.195.158.228:3306/second" userId="root"
+			password="15935728">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		
+		<javaModelGenerator targetPackage="cn.second.lhj.shiro.po"
+			targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="csp"
+			targetProject=".\src\main\resources\mapxml">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.second.lhj.shiro.mapper" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- <table tableName="apply"></table> -->
+		<!-- <table tableName="check_record"></table> -->
+		<!-- <table tableName="stu_info"></table>  -->
+		<!-- <table tableName="menu"></table> -->
+<!-- 		<table tableName="csp_act_register"></table>
+		<table tableName="csp_act_stu_relation"></table>
+		<table tableName="csp_asso_activity"></table>
+		<table tableName="csp_asso_guider"></table>
+		<table tableName="csp_asso_school"></table>
+		<table tableName="csp_asso_student"></table>
+		<table tableName="csp_asso_management"></table>
+		<table tableName="csp_asso_school_unit"></table>
+		<table tableName="csp_asso_stu_relation"></table> -->
+		<table tableName="second_sys_permission"></table>
+		<table tableName="second_sys_role"></table>
+		<table tableName="second_sys_role_permission"></table>
+		<table tableName="second_sys_user_role"></table>
+		<table tableName="second_user_info"></table>
+		<!-- <table tableName="student"></table> -->
+		
+		
+	</context>
+</generatorConfiguration>

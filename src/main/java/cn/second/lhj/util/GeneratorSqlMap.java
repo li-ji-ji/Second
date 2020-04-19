@@ -15,7 +15,10 @@ public class GeneratorSqlMap {
 
 		List<String> warnings = new ArrayList<>();
 		boolean overwrite = true;
-		File configFile = new File("src/main/resources/mybatis-generator.xml");
+		// csp
+		File configFile = new File("src/main/resources/csp-mybatis-generator.xml");
+		// second
+		//File configFile = new File("src/main/resources/second-mybatis-generator.xml");
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = cp.parseConfiguration(configFile);
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
@@ -23,29 +26,15 @@ public class GeneratorSqlMap {
 		myBatisGenerator.generate(null);
 
 	}
-	
-	
-	
-	
-	/*
-	 * public static void main(String[] args) throws Exception { try{
-	 * GeneratorSqlMap generatorSqlMap=new GeneratorSqlMap();
-	 * generatorSqlMap.generator();System.out.println("生成完毕"); }catch(Exception e){
-	 * e.printStackTrace(); } }
-	 */
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	  
-	 
-	 
+
+//	public static void main(String[] args) throws Exception {
+//		try {
+//			GeneratorSqlMap generatorSqlMap = new GeneratorSqlMap();
+//			generatorSqlMap.generator();
+//			System.out.println("生成完毕");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+
 }

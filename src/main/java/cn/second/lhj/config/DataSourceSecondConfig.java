@@ -16,7 +16,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = {"cn.second.lhj.apply.mapper","cn.second.lhj.applykind.mapper","cn.second.lhj.checkrecord.mapper","cn.second.lhj.menu.mapper"}, sqlSessionTemplateRef  = "secondSqlSessionTemplate")
+@MapperScan(basePackages = {"cn.second.lhj.apply.mapper","cn.second.lhj.applykind.mapper","cn.second.lhj.checkrecord.mapper","cn.second.lhj.menu.mapper","cn.second.lhj.shiro.mapper"}, sqlSessionTemplateRef  = "secondSqlSessionTemplate")
 public class DataSourceSecondConfig {
 
     @Bean(name = "secondDataSource")

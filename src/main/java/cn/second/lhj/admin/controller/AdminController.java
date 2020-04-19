@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import cn.second.lhj.log.Log;
 import cn.second.lhj.menu.service.MenuService;
 import cn.second.lhj.menu.vm.MenuVM;
 
@@ -19,6 +20,7 @@ public class AdminController {
 	private MenuService menuService;
 	
 	@RequestMapping("/toIndex")
+	@Log(value="进入管理员后台主页")
 	public String toIndex(Model model) throws Exception{
 		List<MenuVM> menus=menuService.getMenuVMAll();
 		//System.out.println(menus.toString());
@@ -32,4 +34,5 @@ public class AdminController {
 		model.addAttribute("name", name);
 		return "admin/welcome";
 	}
+
 }

@@ -1,0 +1,129 @@
+2020-04-10 15:21:01 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:21:01 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:21:01 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:21:01 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:21:01 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 15:21:01 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:03 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:03 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:14 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:21:14 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:21:14 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:21:14 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\login.ftl hasn't changed.
+2020-04-10 15:21:14 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:14 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:14 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:22 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:21:22 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:21:22 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:21:22 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\login.ftl hasn't changed.
+2020-04-10 15:21:22 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:22 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:22 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:29 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:21:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-04-10 15:21:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-04-10 15:21:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-04-10 15:21:29 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\index.ftl"
+2020-04-10 15:21:29 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:21:30 DEBUG cache:44 - Couldn't find template in cache for "admin/welcome.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:21:30 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh_CN.ftl"): Not found
+2020-04-10 15:21:30 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh.ftl"): Not found
+2020-04-10 15:21:30 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome.ftl"): Found
+2020-04-10 15:21:30 DEBUG cache:44 - Loading template for "admin/welcome.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\welcome.ftl"
+2020-04-10 15:21:30 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-04-10 15:22:50 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\index.ftl hasn't changed.
+2020-04-10 15:22:50 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh_CN.ftl"): Not found
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh.ftl"): Not found
+2020-04-10 15:22:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome.ftl"): Found
+2020-04-10 15:22:50 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\welcome.ftl hasn't changed.
+2020-04-10 15:22:50 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:27:20 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:27:20 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:27:20 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:27:20 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:27:20 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 15:27:20 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:27:29 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-04-10 15:27:29 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\index.ftl"
+2020-04-10 15:27:29 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:27:29 DEBUG cache:44 - Couldn't find template in cache for "admin/welcome.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh_CN.ftl"): Not found
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh.ftl"): Not found
+2020-04-10 15:27:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome.ftl"): Found
+2020-04-10 15:27:29 DEBUG cache:44 - Loading template for "admin/welcome.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\welcome.ftl"
+2020-04-10 15:27:29 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:31:21 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:31:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:31:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:31:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:31:21 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 15:31:21 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:31:35 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-04-10 15:31:35 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\index.ftl"
+2020-04-10 15:31:35 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:31:35 DEBUG cache:44 - Couldn't find template in cache for "admin/welcome.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh_CN.ftl"): Not found
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh.ftl"): Not found
+2020-04-10 15:31:35 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome.ftl"): Found
+2020-04-10 15:31:35 DEBUG cache:44 - Loading template for "admin/welcome.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\welcome.ftl"
+2020-04-10 15:31:35 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:34:33 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:34:33 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:34:33 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:34:33 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:34:33 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 15:34:33 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:34:39 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-04-10 15:34:39 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\index.ftl"
+2020-04-10 15:34:39 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:34:39 INFO  beans:64 - Detected multiple classes with the same name, "cn.second.lhj.menu.vm.MenuVM". Assuming it was a class-reloading. Clearing class introspection caches to release old data.
+2020-04-10 15:34:39 DEBUG cache:44 - Couldn't find template in cache for "admin/welcome.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh_CN.ftl"): Not found
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome_zh.ftl"): Not found
+2020-04-10 15:34:39 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/welcome.ftl"): Found
+2020-04-10 15:34:39 DEBUG cache:44 - Loading template for "admin/welcome.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\welcome.ftl"
+2020-04-10 15:34:39 DEBUG cache:44 - "admin/welcome.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 15:35:54 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 15:35:54 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 15:35:54 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 15:35:54 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 15:35:54 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 15:35:54 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:26:49 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 17:26:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 17:26:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 17:26:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 17:26:49 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 17:26:49 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:30:53 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-04-10 17:30:53 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 17:30:53 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 17:30:53 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 17:30:53 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\LHJ\\SpringBootProject\\Second2.0\\target\\classes\\templates\\admin\\login.ftl"
+2020-04-10 17:30:53 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:31:04 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 17:31:04 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 17:31:04 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 17:31:04 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\login.ftl hasn't changed.
+2020-04-10 17:31:04 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:31:28 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-04-10 17:31:28 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-04-10 17:31:28 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-04-10 17:31:28 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed): using cached since D:\LHJ\SpringBootProject\Second2.0\target\classes\templates\admin\login.ftl hasn't changed.
+2020-04-10 17:31:28 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:31:29 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-04-10 17:31:29 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.

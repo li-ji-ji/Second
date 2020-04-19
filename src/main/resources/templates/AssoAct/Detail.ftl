@@ -7,16 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="renderer" content="webkit">
 <title></title>
-<script type="text/javascript" src="${base}/js/jquery-3.3.1.js"></script>
-<link rel="stylesheet" href="${base}/admin/css/pintuer.css">
-<link rel="stylesheet" href="${base}/admin/css/admin.css">
-<script type="text/javascript" src="${base}/admin/js/bootstrap.min.js"></script>
-<script src="${base}/admin/js/pintuer.js"></script>
+<script type="text/javascript" src="${base}${staticPath}/js/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="${base}${staticPath}/admin/css/pintuer.css">
+<link rel="stylesheet" href="${base}${staticPath}/admin/css/admin.css">
+<script type="text/javascript" src="${base}${staticPath}/admin/js/bootstrap.min.js"></script>
+<script src="${base}${staticPath}/admin/js/pintuer.js"></script>
 <!-- 日期组件 -->
-<link href="${base}/js/bootstrapDatetime/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="${base}/js/bootstrapDatetime/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-<script type="text/javascript" src="${base}/js/bootstrapDatetime/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="${base}/js/bootstrapDatetime/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<link href="${base}${staticPath}/js/bootstrapDatetime/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="${base}${staticPath}/js/bootstrapDatetime/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="${base}${staticPath}/js/bootstrapDatetime/bootstrap/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="${base}${staticPath}/js/bootstrapDatetime/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 </head>
 <body>
 <div class="panel admin-panel">

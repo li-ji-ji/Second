@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="renderer" content="webkit">
 <title></title>
-<script type="text/javascript" src="${base}/js/jquery-3.3.1.js"></script>
-<link rel="stylesheet" href="${base}/admin/css/pintuer.css">
-<link rel="stylesheet" href="${base}/admin/css/admin.css">
-<script src="${base}/admin/js/pintuer.js"></script>
+<script type="text/javascript" src="${base}${staticPath}/js/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="${base}${staticPath}/admin/css/pintuer.css">
+<link rel="stylesheet" href="${base}${staticPath}/admin/css/admin.css">
+<script src="${base}${staticPath}/admin/js/pintuer.js"></script>
 </head>
 <style>
 </style>

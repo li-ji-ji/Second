@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import cn.second.lhj.apply.po.Apply;
 import cn.second.lhj.apply.service.ApplyService;
 import cn.second.lhj.checkrecord.po.CheckRecord;
+import cn.second.lhj.log.Log;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
 @CrossOrigin
 @Api
+@RequestMapping("/api/apply")
 public class ApplyAPI {
 	
 	@Autowired
@@ -29,6 +31,7 @@ public class ApplyAPI {
 	//查询所有申请记录条数
     @ApiOperation(value="查询所有申请记录条数")
 	@RequestMapping("/countApplyAll")
+	@Log(value="查询所有申请记录条数")
 	public int countApplyAll()throws Exception{
 		return applyService.countApplyAll();
 	}

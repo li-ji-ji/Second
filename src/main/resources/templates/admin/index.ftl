@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <title>第二课堂后台管理系统</title>
-<script type="text/javascript" src="${base}/js/jquery-3.3.1.js"></script>
-    <link rel="stylesheet" href="${base}/admin/css/pintuer.css">
-    <link rel="stylesheet" href="${base}/admin/css/admin.css">
+<script type="text/javascript" src="${base}${staticPath}/js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="${base}${staticPath}/admin/css/pintuer.css">
+    <link rel="stylesheet" href="${base}${staticPath}/admin/css/admin.css">
 </head>
 <body style="background-color:#f2f9fd;">
 <div class="header bg-main">
   <div class="logo margin-big-left fadein-top">
-    <h1><img src="images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />第二课堂后台管理系统</h1>
+    <h1><img src="${staticPath}/admin/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />第二课堂后台管理系统</h1>
   </div>
   <div class="head-l"><a class="button button-little bg-green" href="personnew.html" >个人信息</a>  &nbsp;&nbsp;
   	<a class="button button-little bg-red" href="login.html" >

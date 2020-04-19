@@ -16,7 +16,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = {"cn.second.lhj.asso.mapper"}, sqlSessionTemplateRef  = "cspSqlSessionTemplate")
+@MapperScan(basePackages = {"cn.second.lhj.asso.mapper","cn.second.lhj.stuinfo.mapper"}, sqlSessionTemplateRef  = "cspSqlSessionTemplate")
 public class DataSourceCspConfig {
 
     @Bean(name = "cspDataSource")

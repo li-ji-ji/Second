@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})//禁用数据库自动注入以启用多数据源 (exclude = {DataSourceAutoConfiguration.class})
-//@EnableDiscoveryClient //启用服务注册与发现
+@EnableDiscoveryClient //启用服务注册与发现
 @EnableFeignClients //启用feign进行远程调用
 @MapperScan(basePackages = "cn.second.lhj.**.mapper")
 public class SecondApplication {

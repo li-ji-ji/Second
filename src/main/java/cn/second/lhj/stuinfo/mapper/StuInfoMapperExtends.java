@@ -1,5 +1,5 @@
 package cn.second.lhj.stuinfo.mapper;
 
-public interface StuInfoMapperExtends extends StuInfoMapper {
+public interface StuInfoMapperExtends extends StudentMapper{
 
 }

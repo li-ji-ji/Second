@@ -1,4 +1,4 @@
-package cn.second.lhj.admin.controller;
+package cn.second.lhj.util;
 
 import java.net.URLDecoder;
 
