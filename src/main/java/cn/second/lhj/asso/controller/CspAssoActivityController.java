@@ -147,7 +147,7 @@ public class CspAssoActivityController {
 	@RequestMapping("/getActByActId")
 	public String getActById(Model model,@RequestParam("keyWord")String actId)throws Exception{
 		AssoActivityFormDto act=(AssoActivityFormDto) actService.getActivityByActId(actId);
-		List<AssoActivityFormDto> actList=new ArrayList();
+		List<AssoActivityFormDto> actList=new ArrayList<AssoActivityFormDto>();
 		actList.add(act);
 		model.addAttribute("actList",actList);
 		model.addAttribute("pageNum",1);

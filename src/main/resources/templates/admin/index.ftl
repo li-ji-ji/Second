@@ -14,8 +14,8 @@
   <div class="logo margin-big-left fadein-top">
     <h1><img src="${staticPath}/admin/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />第二课堂后台管理系统</h1>
   </div>
-  <div class="head-l"><a class="button button-little bg-green" href="personnew.html" >个人信息</a>  &nbsp;&nbsp;
-  	<a class="button button-little bg-red" href="login.html" >
+  <div class="head-l"><a class="button button-little bg-green" href="javascript:void(0);" onclick="menuClick('/board/toBoard')" >数据中心</a>  &nbsp;&nbsp;
+  	<a class="button button-little bg-red" href="/login/logout" >
   		<span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
@@ -57,11 +57,11 @@ $(function(){
 
 </script>
 <ul class="bread">
-  <li><a href="${base}/admin/toWelcome?name=WELCOME" target="right" class="icon-home"> 首页</a></li>
+  <li><a href="${base}/board/toBoard" target="right" class="icon-home"> 首页</a></li>
   <li><a href="##" id="a_leader_txt">公告信息</a></li>
 </ul>
 <div class="admin" style="overflow:hidden;padding-bottom:20px;">
-  <iframe id="data-table" scrolling="auto" style="padding-bottom:20px;" rameborder="0" src="${base}/admin/toWelcome?name=WELCOME" name="right" width="100%" height="100%"></iframe>
+  <iframe id="data-table" scrolling="auto" style="padding-bottom:20px;" rameborder="0" src="${base}/board/toBoard" name="right" width="100%" height="100%"></iframe>
 </div>
 <div style="text-align:center;">
 </div>

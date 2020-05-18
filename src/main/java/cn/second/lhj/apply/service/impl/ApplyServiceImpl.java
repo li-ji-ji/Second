@@ -2,7 +2,9 @@ package cn.second.lhj.apply.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,7 @@ import cn.second.lhj.apply.mapper.ApplyMapperExtends;
 import cn.second.lhj.apply.po.Apply;
 import cn.second.lhj.apply.po.ApplyExample;
 import cn.second.lhj.apply.service.ApplyService;
+import cn.second.lhj.asso.po.CspAssoActivity;
 import cn.second.lhj.checkrecord.po.CheckRecord;
 import cn.second.lhj.checkrecord.service.CheckRecordService;
 
@@ -176,6 +179,21 @@ public class ApplyServiceImpl implements ApplyService {
 		criteria.andIntegralEqualTo(integral);
 		return applyMapper.selectByExample(example);
 	}
+	//根据查询学生已通过记录
+	@Override
+	public double getApplyPassByStuId(String stuId)throws Exception{
+		List<Apply> applyList = new ArrayList<>();
+		ApplyExample example=new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andCheckStatusEqualTo(1);
+		criteria.andStuIdEqualTo(stuId);
+		applyList = applyMapper.selectByExample(example);
+		double score = 0;
+		for(Apply apply:applyList) {
+			score += apply.getIntegral();
+		}
+		return score;
+	}
 	/*-----------------------------------------查询---------------------------------------------*/
 	
 	
@@ -248,13 +266,35 @@ public class ApplyServiceImpl implements ApplyService {
 	@Override
 	public List<Apply> getApplyCheckedByDateBetween(Date startTime,Date endTime)throws Exception{
 		List<CheckRecord> recordList=crService.getCheckRecordByDateBetween(startTime, endTime);
-		List<Apply> applyList=new ArrayList();
+		List<Apply> applyList=new ArrayList<Apply>();
 		for(CheckRecord record:recordList) {
 			Apply apply=applyMapper.selectByPrimaryKey(Integer.valueOf(record.getApplyId())); 
 			applyList.add(apply);
 		}
 		return applyList;
 	}
+	//根据学生以及时间查询审核记录
+	public List<Apply> getApplyCheckedByDateBetweenAndStuId(Date startTime,Date endTime,String stuId)throws Exception{
+		List<CheckRecord> recordList=crService.getCheckRecordByDateBetween(startTime, endTime);
+		HashMap<String, CheckRecord> map =new HashMap<>();
+		for(CheckRecord record:recordList) {
+			map.put(record.getApplyId(), record);
+		}
+		List<Apply> result=new ArrayList<Apply>();
+		List<Apply> applyList=new ArrayList<Apply>();
+		ApplyExample example = new ApplyExample();
+		ApplyExample.Criteria criteria=example.createCriteria();
+		criteria.andStuIdEqualTo(stuId);
+		applyList = applyMapper.selectByExample(example);
+		for(Apply apply:applyList) {
+			if(map.containsKey(apply.getId().toString())){
+				result.add(apply);
+			}
+		}
+		return result;
+	}
+	
+	
 	/*-----------------------------------------删除---------------------------------------------*/
 
 	/*-----------------------------------------修改---------------------------------------------*/
@@ -488,5 +528,30 @@ public class ApplyServiceImpl implements ApplyService {
 		}
 	}
 	/*-----------------------------------------修改---------------------------------------------*/
+	//获取积分申请种类总数
+	@Override
+	public Map<String,Object> getApplyKind() throws Exception {
+		List<Apply> applyList= getApplyAll();
+		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Integer> count = new HashMap<String, Integer>();
+		List<String> labels = new ArrayList<String>();
+		List<Integer> datas = new ArrayList<Integer>();
+		for(Apply apply:applyList) {
+			if(count.containsKey(apply.getKindName())){
+				count.put(apply.getKindName(), count.get(apply.getKindName())+1);
+//				System.out.println(count.get(act.getActivityKindName()));
+			}else {
+				count.put(apply.getKindName(), 1);
+			}
+		}
+		System.out.println(count);
+		for(Map.Entry<String, Integer> entry : count.entrySet()){
+			labels.add(entry.getKey());
+			datas.add(entry.getValue());
+		}
+		result.put("labels", labels);
+		result.put("datas", datas);
+		return result;
+	}
 
 }

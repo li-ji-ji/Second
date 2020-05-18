@@ -1,6 +1,7 @@
 package cn.second.lhj.asso.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -35,4 +36,6 @@ public interface CspAssoStuRelationService {
 	public int deleteRelationBySId(String stuId)throws Exception;
 	//根据社团编号与学生编号删除关系
 	public int deleteRelationByASId(String assoId,String stuId)throws Exception;
+	//查询学生参加社团情况根据社团编号与学生编号删除关系
+	public Map<String,Object> getAssoStuJoin()throws Exception;
 }

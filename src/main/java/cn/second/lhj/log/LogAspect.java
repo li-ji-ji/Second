@@ -15,12 +15,13 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 日志切面类
@@ -30,9 +31,9 @@ import lombok.extern.slf4j.Slf4j;
 //加入@Aspect 申明一个切面
 @Aspect
 @Component
-@Slf4j
 public class LogAspect {
-	
+
+    private final Logger log = LoggerFactory.getLogger(LogAspect.class);
 	//设置切入点：这里直接拦截被@RestController注解的类
 	@Pointcut("within(@org.springframework.stereotype.Controller *) || within(@org.springframework.web.bind.annotation.RestController *)")
 	public void pointcut() {
@@ -89,7 +90,7 @@ public class LogAspect {
 	 */
 	@AfterThrowing(pointcut="pointcut()",throwing="e")
 	public void afterThrowable(Throwable e) {
-		log.error("切面发生了异常：", e);
+//		log.error("切面发生了异常：", e);
 		//这里可以做个统一异常处理
 		//自定义一个异常 包装后排除
 		//throw new AopException("xxx);
@@ -116,7 +117,7 @@ public class LogAspect {
 					try {
 						inet = InetAddress.getLocalHost();
 					} catch (UnknownHostException e) {
-						log.error("获取ip异常：{}" ,e.getMessage());
+//						log.error("获取ip异常：{}" ,e.getMessage());
 						e.printStackTrace();
 					}
 					ipAddress = inet.getHostAddress();

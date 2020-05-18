@@ -1,6 +1,8 @@
 package cn.second.lhj.asso.service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,10 @@ public interface CspActStuRelationService {
 	public List<CspActStuRelation> getActStuRelationStartedByStuId(String stuId)throws Exception;
 	//根据学生学号查询已报名已结束记录
 	public List<CspActStuRelation> getActStuRelationFinishedByStuId(String stuId)throws Exception;
+	//根据时间查询已报名记录
+	public List<CspActStuRelation> getActStuRelationEnableByTime(Date begin, Date end)throws Exception;
+	//获取参加情况
+	public Map<String, Object> getActJoin() throws Exception;
 	//添加单条活动与学生关系
 	public int addActStuRelationOne(CspActStuRelation relation) throws Exception;
 	//根据ID删除单条活动与学生关系

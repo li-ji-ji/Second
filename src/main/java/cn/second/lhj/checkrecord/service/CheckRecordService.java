@@ -21,6 +21,7 @@ public interface CheckRecordService {
 	public List<CheckRecord> getCheckRecordByCheckerId(String checkerId) throws Exception;
 	//根据时间段查询申请记录
 	public List<CheckRecord> getCheckRecordByDateBetween(Date startTime,Date endTime) throws Exception;
+	
 /*-----------------------------------------查询---------------------------------------------*/
 
 /*-----------------------------------------添加--------------------------------------------*/

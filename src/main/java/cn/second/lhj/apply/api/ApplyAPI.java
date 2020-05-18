@@ -2,7 +2,9 @@ package cn.second.lhj.apply.api;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -149,6 +151,30 @@ public class ApplyAPI {
     	Date endTime=new Date();
     	return applyService.getApplyCheckedByDateBetween(startTime, endTime);
     }
+  //根据时间段查询已审核申请记录
+    @ApiOperation(value="根据时间段查询已审核申请记录")
+	@RequestMapping("/getApplyCheckedByDateBetweenAndStuId")
+	public List<Apply> getApplyCheckedByDateBetweenAndStuId(@RequestParam("startTime")String getStartTime,@RequestParam("stuId")String stuId)throws Exception{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+		Date startTime = sdf.parse(getStartTime); 
+    	Date endTime=new Date();
+    	return applyService.getApplyCheckedByDateBetweenAndStuId(startTime, endTime,stuId);
+    }
+	//查询学生已通过记录积分总和
+    @ApiOperation(value="查询学生已通过记录积分总和")
+	@RequestMapping("/getApplyPassByStuId")
+	public Map<String,Object> getApplyPassByStuId(@RequestParam("stuId")String stuId)throws Exception{
+		Map<String,Object> result = new HashMap<String, Object>();
+		try {
+			result.put("score", applyService.getApplyPassByStuId(stuId));
+			result.put("msg", "请求成功");
+		} catch (Exception e) {
+			result.put("score", 0);
+			result.put("msg", "请求失败");
+		}
+		return result;
+	}
+    
 /*-----------------------------------------查询---------------------------------------------*/
 	
 	

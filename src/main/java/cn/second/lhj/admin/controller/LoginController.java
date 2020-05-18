@@ -44,7 +44,7 @@ public class LoginController {
 			userInfo.setUsername(token.getUsername());
             session.setAttribute("UserInfo", userInfo);
             //设置session时效
-            session.setMaxInactiveInterval(30*60);
+            session.setMaxInactiveInterval(30*1000*60);
 			// 登录成功
 			return "redirect:/admin/toIndex";
 		} catch (UnknownAccountException e) {
@@ -57,6 +57,14 @@ public class LoginController {
 			model.addFlashAttribute("msg","密码错误");
 			return "redirect:/login/toLogin";
 		}
+	}
+	
+	// 退出登录
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request ,HttpServletResponse response) throws Exception{
+		HttpSession session=request.getSession();
+		session.invalidate();
+		return "redirect:/login/toLogin";
 	}
 	
 	//跳转到测试添加用户

@@ -2,6 +2,7 @@ package cn.second.lhj.asso.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -52,6 +53,8 @@ public interface CspAssoActivityService {
 	public List<CspAssoActivity> getActByStuIdSigned(String stuId)throws Exception;
 	//根据学生学号查询已报名已结束活动
 	public List<CspAssoActivity> getActByStuIdFinished(String stuId)throws Exception;
+	//获取活动分类数据
+	public Map<String,Object> getActKind()throws Exception;
 	//添加活动
 	public int insertActicity(CspAssoActivity act)throws Exception;
 	//根据ID删除单个活动

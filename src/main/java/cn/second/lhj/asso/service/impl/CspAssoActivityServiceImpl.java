@@ -2,7 +2,9 @@ package cn.second.lhj.asso.service.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -341,6 +343,32 @@ public class CspAssoActivityServiceImpl implements CspAssoActivityService {
 		BeanUtils.copyProperties(act,actFormData);
 		System.out.println(actFormData.toString());
 		return actFormData;
+	}
+	
+	//获取活动分类数据
+	@Override
+	public Map<String, Object> getActKind() throws Exception {
+		List<CspAssoActivity> actList= getActivityAll();
+		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Integer> count = new HashMap<String, Integer>();
+		List<String> labels = new ArrayList<String>();
+		List<Integer> datas = new ArrayList<Integer>();
+		for(CspAssoActivity act:actList) {
+			if(count.containsKey(act.getActivityKindName())){
+				count.put(act.getActivityKindName(), count.get(act.getActivityKindName())+1);
+//				System.out.println(count.get(act.getActivityKindName()));
+			}else {
+				count.put(act.getActivityKindName(), 1);
+			}
+		}
+		System.out.println(count);
+		for(Map.Entry<String, Integer> entry : count.entrySet()){
+			labels.add(entry.getKey());
+			datas.add(entry.getValue());
+		}
+		result.put("labels", labels);
+		result.put("datas", datas);
+		return result;
 	}
 	
 }

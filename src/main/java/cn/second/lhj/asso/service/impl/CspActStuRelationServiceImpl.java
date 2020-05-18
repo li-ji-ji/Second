@@ -1,8 +1,11 @@
 package cn.second.lhj.asso.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import cn.second.lhj.asso.po.CspAssoActivity;
 import cn.second.lhj.asso.service.CspActStuRelationService;
 import cn.second.lhj.asso.service.CspAssoActivityService;
 import cn.second.lhj.asso.service.CspAssoManagementService;
+import cn.second.lhj.util.DateUtils;
 @Service
 public class CspActStuRelationServiceImpl implements CspActStuRelationService {
 
@@ -189,7 +193,8 @@ public class CspActStuRelationServiceImpl implements CspActStuRelationService {
 	//添加单条活动与学生关系
 	@Override
 	public int addActStuRelationOne(CspActStuRelation relation) throws Exception {
-		CspAssoActivity act=assoAct.getActivityByActId(relation.getActId());
+		CspAssoActivity act=assoAct.getActivityByActId(relation.getActId()); // 查询活动
+		// 判断活动报名人数是否已满
 		if(act.getActivityNum()>act.getActivityPartNum()) {
 			act.setActivityPartNum(act.getActivityPartNum()+1);
 			//System.out.println("参加人数："+act.getActivityPartNum());
@@ -199,17 +204,14 @@ public class CspActStuRelationServiceImpl implements CspActStuRelationService {
 			return 0;
 		}
 		relation.setActName(act.getActivityName());
-		// TODO 获取学生学号
-//		Student stu=stuRemote.getStudentBySn(relation.getStuId());
-//		relation.setStuName(stu.getName());
-		List<CspActStuRelation> getRelation=getActStuRelationByActIdAndStuId(relation.getActId(),relation.getStuId());
-		if(getRelation.size()==0) {
-			Date now=new Date();
+		// 查询报名记录是否存在
+		List<CspActStuRelation> getRelation=getActStuRelationByActIdAndStuId(relation.getActId(),relation.getStuId()); 
+		if(getRelation.size()==0) { // 报名记录不存在，添加报名记录
+			Date now=new Date(); // 获取当前时间作为报名时间
 			relation.setSignTime(now);
 			actStuMapper.insertSelective(relation);
 			return 1;
-		}
-		else if(getRelation.get(0).getStatus()==0){
+		}else if(getRelation.get(0).getStatus()==0){ // 报名记录存在，更改报名记录状态
 			getRelation.get(0).setStatus(1);
 			Date now=new Date();
 			getRelation.get(0).setSignTime(now);
@@ -280,6 +282,36 @@ public class CspActStuRelationServiceImpl implements CspActStuRelationService {
 		return 0;
 	}
 
+	//根据时间查询已报名记录
+	@Override
+	public List<CspActStuRelation> getActStuRelationEnableByTime(Date begin, Date end) throws Exception {
+		CspActStuRelationExample example=new CspActStuRelationExample();
+		CspActStuRelationExample.Criteria criteria=example.createCriteria();
+		criteria.andSignTimeLessThanOrEqualTo(begin);
+		criteria.andSignTimeGreaterThanOrEqualTo(end);
+		criteria.andStatusEqualTo(1);
+		return actStuMapper.selectByExample(example);
+	}
+
+	//获取参加情况
+	@Override
+	public Map<String, Object> getActJoin() throws Exception{
+		Date today = new Date();
+		Map<String, Object> getActJoin = new HashMap<>();
+		List<Integer> datas = new ArrayList<Integer>();
+		List<String> labels = new ArrayList<String>();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		for(int i=0;i<=6;i++) {
+			List<CspActStuRelation> relas  = getActStuRelationEnableByTime(today,DateUtils.yesterday(today));
+			today=DateUtils.yesterday(today);
+			labels.add(formatter.format(today));
+			datas.add(relas.size());
+//			System.out.println(getActJoin);
+		}
+		getActJoin.put("datas", datas);
+		getActJoin.put("labels", labels);
+		return getActJoin;
+	}
 
 
 

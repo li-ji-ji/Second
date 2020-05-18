@@ -1,6 +1,9 @@
 package cn.second.lhj.asso.service.impl;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -139,6 +142,31 @@ public class CspAssoStuRelationServiceImpl implements CspAssoStuRelationService 
 	@Override
 	public int countRelationBySId(String stuId) throws Exception {
 		return cspAssoStuRelationMapper.countBySId(stuId);
+	}
+
+	@Override
+	public Map<String, Object> getAssoStuJoin() throws Exception {
+		List<CspAssoStuRelation> ASRList = getASRelationAll();
+		Map<String, Object> result = new HashMap<String, Object>();
+		Map<String, Integer> count = new HashMap<String, Integer>();
+		List<String> labels = new ArrayList<String>();
+		List<Integer> datas = new ArrayList<Integer>();
+		for(CspAssoStuRelation asr:ASRList) {
+			if(count.containsKey(asr.getAssoName())){
+				count.put(asr.getAssoName(), count.get(asr.getAssoName())+1);
+//				System.out.println(count.get(act.getActivityKindName()));
+			}else {
+				count.put(asr.getAssoName(), 1);
+			}
+		}
+		System.out.println(count);
+		for(Map.Entry<String, Integer> entry : count.entrySet()){
+			labels.add(entry.getKey());
+			datas.add(entry.getValue());
+		}
+		result.put("labels", labels);
+		result.put("datas", datas);
+		return result;
 	}
 
 }

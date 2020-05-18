@@ -1,5 +1,6 @@
 package cn.second.lhj.stuinfo.api;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +18,10 @@ import com.alibaba.fastjson.JSONObject;
 import cn.second.lhj.log.Log;
 import cn.second.lhj.stuinfo.po.Student;
 import cn.second.lhj.stuinfo.service.StuInfoService;
+import cn.second.lhj.util.JwtUtil;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
@@ -53,12 +58,13 @@ public class StuInfoAPI {
     	JSONObject msg = stuInfoServ.getOpenId(code);
     	Student stu = stuInfoServ.getBySn(sn);
     	Map<String, String> result = new HashMap<String, String>();
-    	if(stu == null) {
+    	if(stu == null) { // 判断学生账号是否存在
     		result.put("code", "2");
     		result.put("msg", "账号异常");
     	}else {
-    		if(stu.getPassword().equals(password)) {
-    			stu.setWxopenid(msg.getString("openid"));
+    		// 判断用户密码是否正确
+    		if(stu.getPassword().equals(password)) { // 用户密码正确
+    			stu.setWxopenid(msg.getString("openid")); // 绑定openID
     			try {
     				stuInfoServ.setOne(stu);
 				} catch (Exception e) {
@@ -68,15 +74,43 @@ public class StuInfoAPI {
 				}
     			result.put("code", "1");
     			result.put("openid", msg.getString("openid"));
-    			result.put("session_key", msg.getString("session_key"));
+    			// 生成用于jwt校验的秘钥串
+				String JWTString = JwtUtil.setJWT(stu.getName(), stu.getName(), 1000*60*2880);//1000*60*2880
+    			result.put("session_key", JWTString);
     			result.put("stuInfo", JSONObject.toJSONString(stu));
     			System.out.println(JSONObject.toJSONString(stu));
-    		}else {
+    		}else { // 用户密码错误
         		result.put("code", "2");
         		result.put("msg", "密码错误");
     		}
     	}
   		return result;
+  	}
+
+    //根据小程序端信息请求openID绑定用户
+    @ApiOperation(value="判断用户登录是否过期")
+	@RequestMapping("/checkJWT")
+    @Log(value="判断用户登录是否过期")
+  	public Map checkJWT(@RequestParam("JWTString")String JWTString) throws Exception{
+		Map<String,String> result = new HashMap<String, String>();
+		try {
+			Claims claims =Jwts.parser().setSigningKey("evil-scream").parseClaimsJws(JWTString).getBody();
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy‐MM‐dd hh:mm:ss");
+			System.out.println("签发时间:"+sdf.format(claims.getIssuedAt()));
+			System.out.println("过期时间:"+sdf.format(claims.getExpiration()));
+			System.out.println("当前时间:"+sdf.format(new Date()) );
+			result.put("msg","JWT验证通过");
+			result.put("code", "true");
+		} catch (ExpiredJwtException e) {
+			e.printStackTrace();
+			result.put("msg", "过期");
+			result.put("code", "false");
+		} catch (Exception e) {
+			e.printStackTrace();
+			result.put("msg", "其他");
+			result.put("code", "false");
+		}
+		return result;
   	}
 /*-----------------------------------------查询---------------------------------------------*/
 
