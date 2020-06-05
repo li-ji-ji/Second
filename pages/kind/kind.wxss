@@ -1,0 +1,224 @@
+/**index.wxss**/
+
+page{
+    background: #eaf4f7;
+}
+
+#page {
+    background: #eaf4f7;
+    padding: 10rpx;
+    /* height: 1195rpx; */
+    /* height: 500rpx; */
+}
+
+#kind_background {
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+    /* height: 600rpx; */
+    background: white;
+    padding: 15rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formTitle {
+    width: 100%;
+    height: 50rpx;
+    /* background: antiquewhite; */
+    text-align: center;
+    line-height: 50rpx;
+    font-size: 35rpx;
+    font-weight: bolder;
+}
+
+#firstSetect,
+.sonSelect,
+.score,
+#evidenceArea {
+    width: 100%;
+    height: 60rpx;
+    /* background: #D1B848; */
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #D1B848;
+    display: flex;
+    flex-direction: row;
+    margin: 70rpx 0
+}
+
+.selectIntro,
+.scoreIntro,
+#evidenceTitle {
+    width: 250rpx;
+    height: 60rpx;
+    /* background: #D1B848; */
+    line-height: 60rpx;
+    font-size: 30rpx;
+}
+
+.optionIntro {
+    width: 400rpx;
+    /* height: 200rpx; */
+    /* background: aquamarine; */
+    font-size: 25rpx;
+    text-indent: 2em;
+    color: rgb(184, 181, 181);
+    margin-bottom: 10rpx;
+    margin-left: 265rpx;
+    /* text-align: center; */
+    text-align: justify;
+    /*文本两端对齐，对中文无效，中文的话需要加 text-justify: inter-ideograph*/
+    text-justify: inter-ideograph
+}
+
+#showScore {
+    /* background: aqua; */
+    height: 60rpx;
+    width: 100rpx;
+    border: #e2e2e2 1rpx solid;
+    text-align: center;
+}
+
+.descriptionArea {
+    margin-bottom: 20rpx
+}
+
+#description {
+    width: 100%;
+    /* height: 100rpx; */
+    /* background: hotpink */
+}
+
+#descriptionTitle {
+    width: 250rpx;
+    height: 60rpx;
+    /* background: #D1B848; */
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #D1B848;
+    margin-right: 455rpx;
+}
+
+#description textarea {
+    width: 100%;
+    height: 240rpx;
+    box-shadow: inset 0rpx 0rpx 5rpx 1rpx rgb(184, 181, 181);
+    /* z-index: -1; */
+    /* height: 100rpx; */
+    /* background: hotpink */
+}
+
+#description #imgArea {
+    width: 100%;
+    height: 150rpx;
+    display: flex;
+    flex-direction: row
+    /* background: rgb(41, 122, 91) */
+}
+
+#description #imgArea #addImage {
+    width: 150rpx;
+    height: 150rpx;
+    border: 1rpx solid #918e8e;
+    box-sizing: border-box;
+    margin: 10rpx 0
+    /* background: hotpink */
+}
+
+#showImage>image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+#delete {
+    width: 50rpx;
+    height: 50rps;
+    position: relative;
+    top: -160rpx;
+    left: 100rpx;
+    /* background: #ffffff; */
+    border-radius: 50%;
+}
+
+#delete image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+#imgArea #showImage {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 10rpx 0rpx;
+    /* background: hotpink */
+}
+
+#addImage image {
+    width: 150rpx;
+    margin: 10 0rpx;
+    /* background: hotpink */
+}
+
+#evidenceTitle {
+    height: 60rpx;
+    /* background: #D1B848; */
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #D1B848;
+}
+
+#evidenceArea image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: -90rpx;
+}
+
+.fileArea {
+    width: 97%;
+    /* height: 500rpx; */
+    /* background: aqua; */
+    /* border: #e2e2e2 1rpx solid; */
+    border-radius: 25rpx;
+    box-shadow: inset 0rpx 0rpx 5rpx 1rpx
+}
+
+.file-wrap {
+    width: 100%;
+    height: 60rpx;
+    /* background: darkcyan; */
+    display: flex;
+    flex-direction: row;
+    padding: 0 20rpx;
+    line-height: 60rpx;
+}
+
+.file-wrap view {
+    width: 60%;
+    height: 60rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 60rpx;
+}
+
+.image-remover {
+    margin: 0 15rpx
+}
+
+.image-remover image {
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle
+}
+
+.buttonArea {
+    width: 94%;
+    height: 100rpx;
+    /* background: #D1B848; */
+    /* position: fixed; */
+    /* bottom: 0rpx; */
+    /* z-index: 99; */
+}

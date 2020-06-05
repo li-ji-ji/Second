@@ -1,0 +1,21 @@
+
+var formatNumber = function (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+var regYear = getRegExp("(y+)", "i");
+
+var dateFormat = function (timestamp) {
+  format = getDate(timestamp)
+  return format.toLocaleDateString();
+}
+var dateTimeFormat = function (timestamp) {
+  format = getDate(timestamp)
+  return format.toLocaleString();
+}
+
+module.exports = {
+  dateFormat: dateFormat,
+  dateTimeFormat: dateTimeFormat
+};

@@ -1,0 +1,22 @@
+<!-- logs.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="false"></component-topnav>
+<view id="page" hover-class="none" hover-stop-propagation="false">
+    <view id="newsBackground" hover-class="none" hover-stop-propagation="false">
+        <view id="newsArea">
+            <view id="newBlock" wx:for="{{msg}}">
+                <view id="titleBlock">
+                    <view id="titleBlock_1"></view>
+                    <view id="titleBlock_2"></view>
+                    <view id="titleBlock_3">申请书ID:{{item.id}}</view>
+                    <view id="headPortrait"></view>
+                </view>
+                <view id="contentArea">
+                    {{item.contentText}}
+                </view>
+                <view id="new_time">
+                    {{item.applyTime}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

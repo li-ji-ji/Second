@@ -1,0 +1,37 @@
+/* pages/listitem/listitem.wxss */
+
+
+.item-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.item-title{
+  width: 94%;
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-detail{
+  width: 100%;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+.detail-text{
+  width: 100%;
+  border-top: 1rpx solid gainsboro;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+.item-arrow{
+  width: 32rpx;
+  height: 32rpx;
+}

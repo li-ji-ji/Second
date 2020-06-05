@@ -1,0 +1,53 @@
+.ico-back {
+    background-size: contain;
+    /* background-image: url(data:image/png;); */
+    background-repeat: no-repeat;
+    background-position-x: 20rpx;
+    line-height: 44rpx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hh-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 99;
+    /* border-bottom: 10rpx solid #eeeeee;
+    box-sizing: border-box */
+}
+
+.hh-title {
+    font-size: 35rpx;
+    font-family: serif;
+    /* text-align: left; */
+    color: #1E90FF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 44px;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* border-bottom: 5rpx solid #000000; */
+    box-sizing: border-box
+}
+
+.hh-nav-right {
+    width: 116px;
+}
+
+.hh-nav-back {
+    width: 10%;
+}
+
+.goback {
+    width: 40rpx;
+    height: 40rpx;
+}

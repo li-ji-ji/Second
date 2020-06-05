@@ -1,0 +1,28 @@
+<!-- pages/login/login.wxml -->
+<!-- <component-topnav inner-title="{{title}}" is-show-back="false"></component-topnav> -->
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+<view class="login_Bg" style="height:{{height}}px">
+    <view class="bgBlock_1"></view>
+    <view class="bgBlock_2"></view>
+    <view class="bgBlock_3"></view>
+    <form active="" bind:submit="applyForm">
+        <view id="getUserInfo">
+            <view id="getUserInfoTitle">Second</view>
+            <view id="formBlock">
+                <view class="icon">
+                    <image src="../../icons/Id.png"></image>
+                </view>
+                <input type="text" name="sn" placeholder="请输入学号" value="20160472"></input>
+            </view>
+            <view id="formBlock">
+                <view class="icon">
+                    <image src="../../icons/password.png"></image>
+                </view>
+                <input type="text" name="password" placeholder="请输入密码" value="888888"></input>
+            </view>
+        </view>
+        <view id="loginButton">
+            <button form-type="submit">登陆</button>
+        </view>
+    </form>
+</view>

@@ -1,0 +1,46 @@
+<!-- index.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="false"></component-topnav>
+<view id="page" hover-class="none" hover-stop-propagation="false">
+    <view class="homePage_background">
+        <view class="adv">
+            <swiper class='nav-school-pic-swiper' indicator-dots='{{indicatorDots}}' indicator-color='gray' autoplay='{{autoplay}}' duration='{{duration}}' interval='{{interval}}' circular='true'>
+                <block wx:for="{{imgUrls}}">
+                    <swiper-item class='nav-school-pic-swiper-items'>
+                        <image src='{{item}}' mode='scaleToFill'></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="area">
+            <view class="otherTitle">【{{otherTitle}}】</view>
+            <view class="other">
+                <view class="otherArea" wx:for="{{kinds}}" wx:for-index="idx" wx:for-item="itemName">
+                    <view bindtap='jumpPage' data-type='{{idx}}'>{{itemName.kindName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="listArea" hover-class="none">
+            <view class="listTitle">
+                【{{listTitle}}】
+            </view>
+            <view class="activityArea">
+                <view class="activityLogo">
+                </view>
+                <view class="activityList" wx:for="{{activitys}}" wx:for-item="itemName" data-index="{{index}}" bindtap="jumpActivitys">
+                    <view class="activityText">
+                        <view class="activityName">
+                            <image class="" src="../../images/huodong.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+                            {{itemName.activityName}}
+                        </view>
+                        <view class="activityIntro">{{itemName.activityIntro}}</view>
+                        <view class="showMsg">
+                            <view id="status" wx:if="{{itemName.activityStatus==1}}">招募中</view>
+                            <view id="startTime">开始时间:{{itemName.activityStartTime}}</view>
+                            <view id="organizer">举办方:{{itemName.activityAssoName}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

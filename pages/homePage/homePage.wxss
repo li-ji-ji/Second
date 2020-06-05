@@ -1,0 +1,248 @@
+/**homePage.wxss**/
+
+.homePage_background {
+    width: 100%;
+    /* height: 600rpx; */
+    background: rgb(178, 209, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adv {
+    display: block;
+    margin: 0 auto;
+    width: 99%;
+    height: 350rpx;
+    background: #eaf4f7;
+    overflow: hidden;
+    margin-top: 5rpx;
+    /* border-radius: 20rpx; */
+}
+
+swiper {
+    width: 100%;
+    height: 350rpx;
+}
+
+.swiper-item {
+    width: 100%;
+    height: 365rpx;
+    /* border-radius: 20rpx; */
+    overflow: hidden;
+    /* 让照片循环的时候不变成直角 */
+}
+
+.adv image {
+    width: 100%;
+    height: 100%;
+    overflow: show;
+    /* border-radius: 20rpx 20rpx 20rpx 20rpx; */
+}
+
+.area {
+    width: 98%;
+    margin-top: 10rpx;
+    background: white;
+    /* border-radius: 20rpx */
+}
+
+.otherTitle {
+    width: 97%;
+    height: 60rpx;
+    margin: 0 auto;
+    color: rgb(73, 74, 75);
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bolder;
+    line-height: 60rpx;
+    border-bottom: 1rpx solid rgb(221, 220, 220)
+}
+
+.other {
+    width: 97%;
+    /* height: 200rpx; */
+    margin: 0 auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20rpx;
+    /* border-left: 5rpx solid;
+    border-right: 5rpx solid; */
+    /* border-image: linear-gradient(#2ED, #F80) 20 2; */
+}
+
+.otherArea {
+    width: 50%;
+    height: 100rpx;
+    margin: 10rpx auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.otherArea image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.otherArea view {
+    display: inline-block;
+    width: 90%;
+    height: 80rpx;
+    /* background: beige; */
+    border: 5rpx solid;
+    /* border-radius: 20rpx; */
+    margin: 10rpx;
+    background: linear-gradient(rgb(145, 196, 247), rgb(250, 248, 248) 90%);
+    border-image: linear-gradient(rgb(145, 196, 247), rgb(250, 248, 248)) 10 20;
+    box-shadow: 5px 5px 5px #888888;
+    line-height: 80rpx;
+    text-align: center;
+    color: #6b6969;
+    overflow: hidden;
+    /*超出一行文字自动隐藏  */
+    text-overflow: ellipsis;
+    /*文字隐藏后添加省略号*/
+    white-space: nowrap;
+    /*强制不换行*/
+}
+
+.listArea {
+    width: 97%;
+    margin-top: 10rpx;
+    padding-bottom: 1rpx;
+    background: rgb(255, 255, 255);
+    border-left: 5rpx solid;
+    border-right: 5rpx solid;
+    border-image: linear-gradient(rgb(145, 196, 247), rgb(250, 248, 248)) 10 20;
+}
+
+.listTitle {
+    width: 100%;
+    height: 70rpx;
+    color: rgb(77, 78, 78);
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bolder;
+    line-height: 70rpx;
+    padding-bottom: 5rpx
+}
+
+.listTitle image {
+    width: 50rpx;
+    height: 40rpx;
+}
+
+.activityArea {
+    width: 97%;
+    /* height: 200rpx; */
+    margin: 20rpx auto;
+    margin-top: 40rpx;
+    background: white;
+    border-top: 1px solid #1E90FF;
+}
+
+.activityLogo {
+    position: relative;
+    top: -35rpx;
+    width: 60rpx;
+    margin: 0 auto;
+    background: white;
+    border: 5rpx solid #1E90FF;
+    border-radius: 50%;
+    height: 60rpx;
+}
+
+.activityLogo image {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    left: 10%;
+}
+
+.activityList {
+    width: 97%;
+    /* height: 205rpx; */
+    margin: 0 auto;
+    /* background: aqua; */
+    border-bottom: 2rpx solid;
+    border-image: linear-gradient(to right, #F80, #2ED) 10;
+    padding: 10rpx 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.activityText {
+    flex-direction: column;
+    flex: 1;
+    padding: 0 10rpx;
+    align-content: space-between;
+    /* background: #D1B848; */
+}
+
+.activityText .activityName {
+    color: #6b6969;
+    font-size: 40rpx;
+    font-weight: bolder;
+}
+
+.activityText .activityName image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.activityIntro {
+    width: 95%;
+    height: 100rpx;
+    font-size: 25rpx;
+    color: #8a8888;
+    margin: 30rpx 0;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+#poster {
+    width: 30%;
+    height: 280rpx;
+    /* background: #2ED; */
+}
+
+#poster image {
+    width: 100%;
+    height: 100%;
+}
+
+.pageTransition {
+    width: 100%;
+    color: #2ED;
+    text-align: center;
+    font-size: 25rpx
+}
+
+.showMsg {
+    /* height: 55rpx; */
+    display: flex;
+    flex-direction: column;
+}
+
+#status {
+    width: 100rpx;
+    height: 35rpx;
+    /* position: absolute; */
+    text-align: center;
+    line-height: 35rpx;
+    font-size: 20rpx;
+    font-family: serif;
+    font-weight: 100;
+    left: 450rpx;
+    top: 90rpx;
+    color: #e33333;
+    border: 2rpx solid #e33333;
+    /* transform: rotate(25deg) */
+}

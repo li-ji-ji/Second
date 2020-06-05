@@ -1,0 +1,10 @@
+<!--pages/historyNav/historyNav.wxml-->
+<!-- 历史记录头部导航 -->
+<view class="apply-nav-box">
+  <view  wx:for="{{isCheckBtn}}" wx:key="key" wx:for-index="index" wx:for-item="item" id="checked-apply" class="checked-apply apply-nav-box-item" style="background-color:{{item.color}}" bindtap="changeList"data-index="{{index}}">
+    {{item.title}}
+    <image wx-if="{{item.arrow}}" class="apply-nav-box-item-arrow" src="../../images/arrow-down-blue.png"></image>
+  </view>
+</view>
+
+  

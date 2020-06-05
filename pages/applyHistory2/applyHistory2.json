@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-topnav": "/pages/topnav/topnav",
+    "component-historyNav": "/pages/historyNav/historyNav",
+    "component-listitem": "/pages/listitem/listitem"
+  }
+}

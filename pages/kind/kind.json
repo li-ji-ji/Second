@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "component-topnav": "/pages/topnav/topnav",
+        "select": "/pages/select/select"
+    }
+}

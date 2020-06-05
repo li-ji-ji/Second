@@ -1,0 +1,67 @@
+<!-- kind.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+<view id="page" style="height:{{windowHeight*0.96}}px;">
+    <view id="kind_background">
+        <form>
+            <view id="formTitle">我的申请书</view>
+            <view id="firstSetect">
+                <view class="selectIntro">选择类别:</view>
+                <select prop-array='{{kinds}}' bindcompclick="onCompClick"></select>
+            </view>
+            <view class="optionIntro" wx:if="{{showIntro=='true'}}">
+                {{kinds[introIndex].kindIntro}}
+            </view>
+            <view class="sonSelect" wx:if="{{sonKinds.length>0}}">
+                <view class="selectIntro">选择子类别:</view>
+                <select prop-array='{{sonKinds}}' bindcompclick2="onCompClick_2"></select>
+            </view>
+            <view class="score">
+                <view class="scoreIntro">申请积分:</view>
+                <view id="showScore" wx:if="{{sonKinds.length>0}}">
+                    {{sonKinds[score].kindIntegral}}
+                </view>
+                <view id="showScore" wx:else>{{kinds[introIndex].kindIntegral}}</view>
+            </view>
+            <view id="evidenceArea">
+                <view id="evidenceTitle">上传文件:</view>
+                <image class="evidenceImg" src="../../images/add.png" mode="widthFix" bindtap='jumpWeb'></image>
+                <!-- <view>{{fileName}}</view> -->
+                <!-- <input type="text"> -->
+            </view>
+            <view class="fileArea">
+                <view class="file-wrap" wx:for="{{uploadfile}}">
+                    <!-- 图片缩略图 -->
+                    <!-- <image class="image" src="{{item.url}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image> -->
+                    <!-- 文件名 -->
+                    <view>{{item.name}}</view>
+                    <!-- 移除图片的按钮 -->
+                    <view class="image-remover">
+                        <image src="../../images/delete.png" data-idx="{{index}}" mode="widthFix" bindtap='removefile'></image>
+                    </view>
+                </view>
+            </view>
+            <view class="descriptionArea">
+                <view id="descriptionTitle">佐证材料及描述:</view>
+                <view id="description">
+                    <textarea placeholder="请详述描述，字数140字以内" bindblur='getContent' value='{{concent}}' focus='true'></textarea>
+                    <view id="imgArea">
+                        <view id="showImage" wx:for="{{images}}">
+                            <image src="{{item}}" bindtap='handleImagePreview'></image>
+                            <view id="delete">
+                                <image src="../../images/delete.png" mode="widthFix" bindtap='removeImage'></image>
+                            </view>
+                        </view>
+                        <view id="addImage">
+                            <image class="" src="../../images/addImage.png" mode="widthFix" bindtap='uploadImage'></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="buttonArea">
+                <button size="default" type="default" plain="default" form-type="submit" bindtap="submit">
+                    提交
+                </button>
+            </view>
+        </form>
+    </view>
+</view>

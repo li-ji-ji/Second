@@ -1,0 +1,30 @@
+<!-- pages/history/history.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+
+
+
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">
+            {{navItem.text}}
+        </view>
+    </block>
+</scroll-view>
+<!-- 页面内容 -->
+<swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <swiper-item wx:for="{{4}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+        <view id="listBox" wx:for="{{list}}">
+            <view id="listTitle" catchtap="listTap" data-index='{{index}}'>{{item.kindName}}</view>
+            <view id="listContent" wx:if='{{item.show}}'>
+            <view class="titleBlock">
+                <view>申请积分:</view>
+                <view>提交时间:</view>
+            </view>
+             <view class="contentBlock">
+                <view>{{item.integral}}</view>
+                <view>{{item.applyTime}}</view>
+            </view>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>

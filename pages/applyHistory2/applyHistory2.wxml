@@ -1,0 +1,25 @@
+<!-- pages/applyHistory2/applyHistory2.wxml -->
+
+<wxs module="DateFormat" src="../../wxs/DateFormat.wxs"></wxs>
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+<view class="container-box">
+    <view class="history-nav-box">
+        <component-historyNav bindurlMsg="getList"  is-check-btn="{{checkBtn}}" stu-id="{{stuId}}"></component-historyNav>
+    </view>
+    <!-- 分割 -->
+    <view style="width:100%;height:70rpx;"></view>
+    <!-- 申请列表 -->
+    <!-- 列表容器 -->
+    <scroll-view enable-flex scroll-y style="width:96%;height:{{windowHeight*0.82}}px;" class="history-list-box">
+      <component-listitem item-data="true"  wx:for="{{historyList}}" wx:key='key'>
+        <view slot="title" class="apply-title-box">
+          申请书：{{item.id}}号
+        </view>
+        <view slot="content">
+          <view class="content-font">申请分类:{{item.kindName}}</view>
+          <view class="content-font">积分:{{item.integral}}</view>
+          <view class="content-font">提交时间：{{DateFormat.dateFormat(item.applyTime)}}</view>
+        </view>
+      </component-listitem>
+    </scroll-view>
+</view>

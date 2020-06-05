@@ -1,0 +1,70 @@
+<!-- pages/history/history.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">
+            {{navItem.text}}
+        </view>
+    </block>
+</scroll-view>
+<!-- 页面内容 -->
+<swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height-navHeight}}px">
+    <swiper-item wx:for="{{4}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+        <view id="listBox" wx:for="{{list}}" data-index="index">
+            <view id="listTitle" bindtap="selectMethod" data-index='{{index}}'>
+                <view wx:if="{{currentTab!=1}}">{{item.actName}}</view>
+                <view wx:else>{{item.activityName}}</view>
+            </view>
+            <view wx:if="{{currentTab==1}}">
+                <view id="listContent" wx:if='{{item.show}}'>
+                    <view class="displayArea">
+                        <view id="content">
+                            <view class="itemArea">
+                                <view id="title">开始时间</view>
+                                <view class="contentBlock">
+                                    <view>{{item.activityStartTime}}</view>
+                                </view>
+                            </view>
+                            <view class="itemArea">
+                                <view id="title">结束时间</view>
+                                <view class="contentBlock">
+                                    <view>{{item.activityFinishTime}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view id="dateAndImg">
+                            <view class="nowDate" bindtap="showNote">{{date}}</view>
+                            <view wx:if="{{item.imgShow==1}}">
+                                <image class="img" src="{{item.path}}" mode="widthFix" bindtap='handleImagePreview'></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view id="checkInArea" wx:if="{{currentTab==1}}">
+                        
+                        <view id="checkIn_On" wx:if="{{item.buttonStatus!=1}}" bindtap="evidenceAndChange">签到</view>
+                        <view id="checkIn_Off" wx:else>已签到</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>
+<view class="noteBg" style="height:{{height}}px" wx:if="{{showNote==1}}" bindtap="noteBg_off">
+    <view class="noteArea">
+        <view id="noteTitle">签到记录</view>
+        <view id="line_1"></view>
+        <view id="line_2"></view>
+        <scroll-view class="noteScroll" scroll-y="true">
+            <view id="noteBlock" wx:for="{{register}}">
+                <view id="checkInLogoArea">
+                    <view id="upLine"></view>
+                    <view class="imageBlock" hover-class="none" hover-stop-propagation="false">
+                        <image src="../../icons/checkIn.png"></image>
+                    </view>
+                    <view id="downLine"></view>
+                </view>
+                <view id="registerTime">{{item.registerTime}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

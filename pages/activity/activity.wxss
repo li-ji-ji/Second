@@ -1,0 +1,164 @@
+/* pages/activity/activity.wxss */
+
+.activityPage {
+    width: 100%;
+    /* height: 500rpx; */
+    /* background: linear-gradient(red, rgb(238, 255, 0)); */
+}
+
+#pageBg {
+    width: 100%;
+    /* height: 500rpx; */
+    /* background: #e46969 */
+}
+
+.adv {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 350rpx;
+    background: #eaf4f7;
+    overflow: hidden;
+    /* margin-top: 10rpx; */
+    /* border-radius: 20rpx; */
+}
+
+swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-item {
+    width: 700rpx;
+    height: 365rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+    /* 让照片循环的时候不变成直角 */
+}
+
+.adv image {
+    width: 100%;
+    height: 100%;
+    overflow: show;
+    /* border-radius: 20rpx 20rpx 20rpx 20rpx; */
+}
+
+#activityArea {
+    width: 100%;
+    /* height: 200rpx; */
+    /* background: khaki; */
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#title {
+    width: 99%;
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+    /* background: linear-gradient(#e4fa68, white); */
+    color: rgb(109, 107, 107);
+    border-bottom: 10rpx solid;
+    border-image: linear-gradient(#e4fa68, white)20 20;
+    font-size: 30rpx;
+    font-weight: bold;
+    padding-left: 30rpx;
+    border-radius: 5rpx
+}
+
+#intro {
+    width: 96%;
+    background: white;
+    text-indent: 1.8rem;
+    vertical-align: middle;
+    margin: 20rpx 0;
+    word-wrap: break-word;
+    font-size: 27rpx;
+    color: rgb(138, 138, 138)
+}
+
+#content {
+    width: 96%;
+    /* background: darkcyan; */
+    text-indent: 2rem;
+    color: rgb(138, 138, 138);
+    vertical-align: middle;
+    margin: 10rpx 0;
+    word-wrap: break-word;
+}
+
+#organizerArea {
+    border: 1rpx solid #eaf4f7;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#logo {
+    width: 10rpx;
+    height: 50rpx;
+    margin: auto 0;
+    -left: 10rpx;
+    background: #e4fa68
+}
+
+#organizer {
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 30rpx;
+    /* font-weight: bold; */
+    /* padding-left: 30rpx; */
+    border-radius: 5rpx;
+    /* margin: 20rpx 0; */
+}
+
+#leader {
+    width: 100%;
+    height: 140rpx;
+    border: 1rpx solid rgb(172, 169, 169);
+    font-size: 30rpx;
+    font-weight: bold;
+    border-radius: 5rpx;
+    margin: 20rpx 0;
+}
+
+#name {
+    margin: 0 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+#phoneNumber {
+    margin: 0 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+#space {
+    width: 100%;
+    height: 70rpx;
+}
+
+.join {
+    width: 100%;
+    height: 70rpx;
+    background: rgb(240, 66, 66);
+    line-height: 70rpx;
+    color: #ffffff;
+    position: fixed;
+    z-index: 99;
+    bottom: 0rpx
+}
+
+.end {
+    width: 100%;
+    height: 70rpx;
+    background: rgb(134, 134, 134);
+    line-height: 70rpx;
+    color: #ffffff;
+    position: fixed;
+    z-index: 99;
+    bottom: 0rpx
+}

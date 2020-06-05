@@ -1,0 +1,31 @@
+/* pages/activityHistory2/activityHistory2.wxss */
+.container-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+.history-nav-box{
+  width: 100%;
+}
+.history-list-box{
+  width: 96%;
+  height: 100%;
+  justify-content: center;
+  padding: 20rpx 10rpx;
+  flex-wrap: wrap;
+  border: 6rpx solid #1E90FF;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  background-color: #f7f7f7;
+}
+.list-item{
+  width: 100%;
+}
+.content-font{
+  font-size: 14px;
+  color: gray;
+}

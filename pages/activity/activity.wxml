@@ -1,0 +1,41 @@
+<!-- pages/activity/activity.wxml -->
+<component-topnav inner-title="{{title}}" is-show-back="true"></component-topnav>
+<view class="activityPage">
+    <view id="pageBg">
+        <view class="adv">
+            <swiper class='nav-school-pic-swiper' indicator-dots='{{indicatorDots}}' indicator-color='gray' autoplay='true' duration='2000' interval='{{interval}}' circular='true'>
+                <block wx:for="{{imgUrls}}">
+                    <swiper-item class='nav-school-pic-swiper-items'>
+                        <image src='{{item}}' mode='widthFix' data-index="{{index}}" bindtap='handleImagePreview'></image>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view id="activityArea">
+            <view id="title">【活动简介】</view>
+            <view id="intro">{{act.activityIntro}}</view>
+            <view id="title">【活动内容】</view>
+            <view id="content">{{act.activityContent}}</view>
+            <view id="organizerArea">
+                <view id="logo"></view>
+                <view id="organizer" wx:for="{{organizer}}">举办方:{{act.activityAssoName}}</view>
+            </view>
+            <view id="leader">
+                <view id="name">负责人:{{act.activityOrganizerName}}</view>
+                <view id="phoneNumber">联系方式:{{phoneNumber}}</view>
+            </view>
+        </view>
+    </view>
+    <view id="space"></view>
+    <view id="buttonArea">
+        <view wx:if="{{end==1}}">
+            <button class="end" size="default" bindtap='delateJoin'>已结束</button>
+        </view>
+        <view wx:else>
+            <button wx:if="{{joinStatus==1}}" class="join" size="default" bindtap='join'>
+                我要报名
+            </button>
+            <button wx:else class="join" size="default" bindtap='delateJoin'>取消报名</button>
+        </view>
+    </view>
+</view>

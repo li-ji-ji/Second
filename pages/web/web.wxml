@@ -1,0 +1,2 @@
+<!-- index.wxml -->
+<web-view src="{{msg}}" bindmessage="handleGetMessage">{{msg}}</web-view> 

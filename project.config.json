@@ -1,0 +1,117 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.2",
+	"appid": "wx5a7537799c6f4589",
+	"projectname": "Second",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": -1,
+					"name": "news",
+					"pathName": "pages/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "kind",
+					"pathName": "pages/kind/kind",
+					"query": "nameData=' '&idData=1",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "activityHistory",
+					"pathName": "pages/activityHistory/activityHistory",
+					"query": "title='活动'",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "申请记录",
+					"pathName": "pages/applyHistory/applyHistory",
+					"query": "stuId=20160472",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请列表2",
+					"pathName": "pages/applyHistory2/applyHistory2",
+					"query": "stuId=20160472",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "列表组件",
+					"pathName": "pages/list/list",
+					"scene": null
+				}
+			]
+		}
+	}
+}
