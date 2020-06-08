@@ -14,7 +14,7 @@
   <div class="logo margin-big-left fadein-top">
     <h1><img src="${staticPath}/admin/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />第二课堂后台管理系统</h1>
   </div>
-  <div class="head-l"><a class="button button-little bg-green" href="javascript:void(0);" onclick="menuClick('/board/toBoard')" >数据中心</a>  &nbsp;&nbsp;
+  <div class="head-l"><a class="button button-little bg-green" href="javascript:void(0);" onclick="menuClick('/second/board/toBoard')" >数据中心</a>  &nbsp;&nbsp;
   	<a class="button button-little bg-red" href="/login/logout" >
   		<span class="icon-power-off"></span> 退出登录</a> </div>
 </div>

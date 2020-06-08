@@ -2731,3 +2731,86 @@ freemarker.core.NonStringOrTemplateOutputException: [... Exception message was a
 2020-05-18 10:01:18 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
 2020-05-18 10:01:18 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed): using cached since D:\WorkSpace\SpringbootSpace\Second\target\classes\templates\admin\login.ftl hasn't changed.
 2020-05-18 10:01:18 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-18 20:51:21 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-05-18 20:51:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-05-18 20:51:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-05-18 20:51:21 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-05-18 20:51:21 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\WorkSpace\\SpringbootSpace\\Second\\target\\classes\\templates\\admin\\login.ftl"
+2020-05-18 20:51:21 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-18 20:51:31 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-05-18 20:51:31 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-05-18 20:51:31 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-05-18 20:51:31 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-05-18 20:51:31 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "D:\\WorkSpace\\SpringbootSpace\\Second\\target\\classes\\templates\\admin\\index.ftl"
+2020-05-18 20:51:31 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-18 20:51:32 DEBUG cache:44 - Couldn't find template in cache for "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-05-18 20:51:32 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh_CN.ftl"): Not found
+2020-05-18 20:51:32 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh.ftl"): Not found
+2020-05-18 20:51:32 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard.ftl"): Found
+2020-05-18 20:51:32 DEBUG cache:44 - Loading template for "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) from "D:\\WorkSpace\\SpringbootSpace\\Second\\target\\classes\\templates\\admin\\DashBoard.ftl"
+2020-05-18 20:51:32 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-18 20:51:41 DEBUG cache:44 - Couldn't find template in cache for "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-05-18 20:51:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table_zh_CN.ftl"): Not found
+2020-05-18 20:51:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table_zh.ftl"): Not found
+2020-05-18 20:51:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table.ftl"): Found
+2020-05-18 20:51:41 DEBUG cache:44 - Loading template for "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed) from "D:\\WorkSpace\\SpringbootSpace\\Second\\target\\classes\\templates\\AssoAct\\Table.ftl"
+2020-05-18 20:51:41 DEBUG cache:44 - "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-18 20:52:55 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh_CN.ftl"): Not found
+2020-05-18 20:52:55 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh.ftl"): Not found
+2020-05-18 20:52:55 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard.ftl"): Found
+2020-05-18 20:52:55 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed): using cached since D:\WorkSpace\SpringbootSpace\Second\target\classes\templates\admin\DashBoard.ftl hasn't changed.
+2020-05-18 20:52:55 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-05-19 13:20:29 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-05-19 13:20:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-05-19 13:20:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-05-19 13:20:29 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-05-19 13:20:29 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "D:\\WorkSpace\\SpringbootSpace\\Second\\target\\classes\\templates\\admin\\login.ftl"
+2020-05-19 13:20:29 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:32:43 DEBUG cache:44 - Couldn't find template in cache for "admin/login.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-06-08 13:32:43 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh_CN.ftl"): Not found
+2020-06-08 13:32:43 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login_zh.ftl"): Not found
+2020-06-08 13:32:43 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/login.ftl"): Found
+2020-06-08 13:32:43 DEBUG cache:44 - Loading template for "admin/login.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/login.ftl"
+2020-06-08 13:32:43 DEBUG cache:44 - "admin/login.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:32:50 DEBUG cache:44 - Couldn't find template in cache for "admin/index.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-06-08 13:32:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-06-08 13:32:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-06-08 13:32:50 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-06-08 13:32:50 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/index.ftl"
+2020-06-08 13:32:50 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:32:51 DEBUG cache:44 - Couldn't find template in cache for "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-06-08 13:32:51 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh_CN.ftl"): Not found
+2020-06-08 13:32:51 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh.ftl"): Not found
+2020-06-08 13:32:51 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard.ftl"): Found
+2020-06-08 13:32:51 DEBUG cache:44 - Loading template for "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/DashBoard.ftl"
+2020-06-08 13:32:51 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh_CN.ftl"): Not found
+2020-06-08 13:33:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index_zh.ftl"): Not found
+2020-06-08 13:33:41 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/index.ftl"): Found
+2020-06-08 13:33:41 DEBUG cache:44 - Updating source because: lastModifiedNotChanged=false, cached.lastModified=1591593810000 != source.lastModified=1591594411000
+2020-06-08 13:33:41 DEBUG cache:44 - Loading template for "admin/index.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/index.ftl"
+2020-06-08 13:33:41 DEBUG cache:44 - "admin/index.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:42 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh_CN.ftl"): Not found
+2020-06-08 13:33:42 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh.ftl"): Not found
+2020-06-08 13:33:42 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard.ftl"): Found
+2020-06-08 13:33:42 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed): using cached since /home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/DashBoard.ftl hasn't changed.
+2020-06-08 13:33:42 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:44 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:44 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:47 DEBUG cache:44 - Couldn't find template in cache for "applykind/Table.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-06-08 13:33:47 DEBUG cache:44 - TemplateLoader.findTemplateSource("applykind/Table_zh_CN.ftl"): Not found
+2020-06-08 13:33:47 DEBUG cache:44 - TemplateLoader.findTemplateSource("applykind/Table_zh.ftl"): Not found
+2020-06-08 13:33:47 DEBUG cache:44 - TemplateLoader.findTemplateSource("applykind/Table.ftl"): Found
+2020-06-08 13:33:47 DEBUG cache:44 - Loading template for "applykind/Table.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/applykind/Table.ftl"
+2020-06-08 13:33:47 DEBUG cache:44 - "applykind/Table.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:33:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh_CN.ftl"): Not found
+2020-06-08 13:33:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard_zh.ftl"): Not found
+2020-06-08 13:33:49 DEBUG cache:44 - TemplateLoader.findTemplateSource("admin/DashBoard.ftl"): Found
+2020-06-08 13:33:49 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed): using cached since /home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/admin/DashBoard.ftl hasn't changed.
+2020-06-08 13:33:49 DEBUG cache:44 - "admin/DashBoard.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
+2020-06-08 13:34:16 DEBUG cache:44 - Couldn't find template in cache for "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed); will try to load it.
+2020-06-08 13:34:16 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table_zh_CN.ftl"): Not found
+2020-06-08 13:34:16 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table_zh.ftl"): Not found
+2020-06-08 13:34:16 DEBUG cache:44 - TemplateLoader.findTemplateSource("AssoAct/Table.ftl"): Found
+2020-06-08 13:34:16 DEBUG cache:44 - Loading template for "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed) from "/home/lhj/data/WorkSpace/SpringbootSpace/Second/target/classes/templates/AssoAct/Table.ftl"
+2020-06-08 13:34:16 DEBUG cache:44 - "AssoAct/Table.ftl"("zh_CN", UTF-8, parsed) cached copy not yet stale; using cached.
